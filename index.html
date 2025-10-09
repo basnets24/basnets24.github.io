@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Sneha Basnet | Software Engineer Portfolio" />
+    <title>Sneha Basnet | Software Engineering Portfolio</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/5df2fbc6b7.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+
+<body data-theme="dark">
+    <nav>
+        <div class="nav-brand"><strong>Sneha Basnet</strong></div>
+        <div class="nav-links">
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+            <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch to light theme">
+                <i class="fas fa-sun"></i>
+            </button>
+        </div>
+    </nav>
+
+    <header>
+        <h1> Hi, I'm Sneha Basnet</h1>
+        <h2>From class projects to cloud deployments — I'm learning by building.</h2>
+        <p>CS @ San José State University (GPA 3.90) • Backend & Cloud Developer</p>
+        <div class="cta-buttons">
+            <a class="cta-button cta-button--primary" href="#projects">View Projects</a>
+            <a class="cta-button cta-button--outline" href="Sneha_Basnet_SDE_Intern_Resume.pdf" target="_blank">Download Résumé</a>
+            <a class="cta-button cta-button--outline" href="#contact">Get in Touch</a>
+        </div>
+    </header>
+
+    <section id="about" class="about fade-in">
+        <h2 class="section-title">About Me</h2>
+        <p>
+            I’m a Computer Science student at <strong>San José State University</strong>, passionate about backend
+            systems,
+            distributed architectures, and developer-focused design.
+            <br><br>
+            With hands-on experience in cloud-native microservices and full-stack development, I love building systems
+            that are
+            scalable, observable, and resilient. I’m currently seeking a <strong>Software Engineering Internship (Summer
+                2026)</strong>
+            to contribute to large-scale systems and learn from world-class engineering teams.
+        </p>
+    </section>
+
+    <section id="skills" class="fade-in">
+        <h2 class="section-title">Technical Skills</h2>
+        <div class="skills">
+            <div>
+                <h3>Languages & Frameworks</h3>
+                <p>Java, C#, C++, JavaScript, .NET, React</p>
+            </div>
+            <div>
+                <h3>Cloud & DevOps</h3>
+                <p>Azure (AKS, ACR, Key Vault, Cosmos DB), Docker, Kubernetes, Helm, GitHub Actions</p>
+            </div>
+            <div>
+                <h3>Architecture & Design</h3>
+                <p>DDD, Event-Driven Architecture, Distributed Microservices</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="fade-in">
+        <h2 class="section-title">Projects</h2>
+        <div class="projects-grid">
+
+            <div class="project-card">
+                <div class="project-card__header">
+                    <div class="project-card__heading">
+                        <h3 class="project-card__title">GamePlayEconomy</h3>
+                        <p class="project-card__subtitle">Cloud-native player economy platform powering secure guild trading and live ops analytics.</p>
+                    </div>
+                    <span class="project-card__accent">Flagship Build</span>
+                </div>
+                <div class="project-card__content">
+                    <div class="project-card__tags">
+                        <span class="project-tag">.NET</span>
+                        <span class="project-tag">React</span>
+                        <span class="project-tag">RabbitMQ</span>
+                        <span class="project-tag">AKS</span>
+                    </div>
+                    <ul class="project-highlights">
+                        <li>Implemented MassTransit orchestration across RabbitMQ and Azure Service Bus to keep player trades transactionally consistent.</li>
+                        <li>Configured IdentityServer with OAuth 2.0 and scoped JWT roles to secure partner APIs and internal admin tooling.</li>
+                        <li>Automated AKS releases through GitHub Actions and Helm while wiring Seq, Jaeger, and Prometheus into the gateway for deploy-time telemetry.</li>
+                    </ul>
+                    <div class="project-links">
+                        <a class="project-link project-link--live" href="https://gameplayeconomy.com" target="_blank">
+                            <i class="fas fa-external-link-alt"></i><span>Live</span>
+                        </a>
+                        <a class="project-link project-link--code" href="https://github.com/dotnetmicroservices001" target="_blank">
+                            <i class="fab fa-github"></i><span>GitHub · dotnetmicroservices001</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-card__header">
+                    <div class="project-card__heading">
+                        <h3 class="project-card__title">SpoonTab</h3>
+                        <p class="project-card__subtitle">Multi-tenant POS SaaS that keeps kitchen, floor, and finance teams in sync end-to-end.</p>
+                    </div>
+                    <span class="project-card__accent">Product Launch</span>
+                </div>
+                <div class="project-card__content">
+                    <div class="project-card__tags">
+                        <span class="project-tag">.NET</span>
+                        <span class="project-tag">React</span>
+                        <span class="project-tag">Stripe</span>
+                        <span class="project-tag">Azure</span>
+                    </div>
+                    <ul class="project-highlights">
+                        <li>Delivered restaurant ordering, payments, and floor operations through microservices and real-time messaging to keep POS terminals aligned.</li>
+                        <li>Established tenant-aware IdentityServer policies and JWT scopes that matched restaurant staffing models without adding friction.</li>
+                        <li>Integrated Stripe Checkout, Helm-managed AKS rollouts, and Cosmos DB backups so payment workflows remain resilient and recoverable.</li>
+                    </ul>
+                    <div class="project-links">
+                        <a class="project-link project-link--live" href="https://spoontab.com" target="_blank">
+                            <i class="fas fa-external-link-alt"></i><span>Live</span>
+                        </a>
+                        <a class="project-link project-link--code" href="https://github.com/basnets24/restaurant.pos" target="_blank">
+                            <i class="fab fa-github"></i><span>GitHub · restaurant.pos</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-card__header">
+                    <div class="project-card__heading">
+                        <h3 class="project-card__title">CampusConnect</h3>
+                        <p class="project-card__subtitle">Desktop office-hours companion that gives professors and students a calm, reliable scheduling flow.</p>
+                    </div>
+                    <span class="project-card__accent">Campus Collab</span>
+                </div>
+                <div class="project-card__content">
+                    <div class="project-card__tags">
+                        <span class="project-tag">JavaFX</span>
+                        <span class="project-tag">MySQL</span>
+                        <span class="project-tag">MVC</span>
+                    </div>
+                    <ul class="project-highlights">
+                        <li>Built a JavaFX + MySQL scheduler with MVC validation to prevent overlapping appointments for faculty and students.</li>
+                        <li>Published CSV exports and scheduling views so staff could review bookings without digging through the database.</li>
+                        <li>Kept the team moving by owning Git reviews, repo hygiene, and pair-debugging whenever a blocker showed up.</li>
+                    </ul>
+                    <div class="project-links">
+                        <a class="project-link project-link--code" href="https://github.com/basnets24/CampusConnect"
+                            target="_blank">
+                            <i class="fab fa-github"></i><span>GitHub · CampusConnect</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="contact" class="contact fade-in">
+        <h2 class="section-title">Contact</h2>
+        <p>📍 San Jose, CA</p>
+        <p>📧 <a href="mailto:snehabasnet224@gmail.com">snehabasnet224@gmail.com</a></p>
+        <p>
+            🔗
+            <a href="https://linkedin.com/in/snehabasnet" target="_blank">LinkedIn</a> |
+            <a href="https://github.com/basnets24" target="_blank">GitHub</a> |
+            <a href="https://snehabasnet.com" target="_blank">Portfolio</a>
+        </p>
+        <p>Always open to opportunities, collaborations, and learning!</p>
+    </section>
+
+    <footer>© 2025 Sneha Basnet · <a href="Sneha_Basnet_SDE_Intern_Resume.pdf" target="_blank">Résumé</a> · Built with 💙 using HTML, CSS, and JavaScript.</footer>
+
+    <script defer src="script.js"></script>
+
+</body>
+
+</html>
