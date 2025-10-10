@@ -11,6 +11,9 @@
     <script src="https://kit.fontawesome.com/5df2fbc6b7.js" crossorigin="anonymous"></script>
 
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="skill-badges.css">
+    <link rel="stylesheet" href="enhanced-visuals.css">
+    <link rel="stylesheet" href="scroll-progress.css">
 
 </head>
 
@@ -34,7 +37,8 @@
         <p>CS @ San José State University (GPA 3.90) • Backend & Cloud Developer</p>
         <div class="cta-buttons">
             <a class="cta-button cta-button--primary" href="#projects">View Projects</a>
-            <a class="cta-button cta-button--outline" href="Sneha_Basnet_SDE_Intern_Resume.pdf" target="_blank">Download Résumé</a>
+            <a class="cta-button cta-button--outline" href="Sneha_Basnet_SDE_Intern_Resume.pdf" target="_blank">Download
+                Résumé</a>
             <a class="cta-button cta-button--outline" href="#contact">Get in Touch</a>
         </div>
     </header>
@@ -54,25 +58,84 @@
         </p>
     </section>
 
-    <section id="skills" class="fade-in">
+    <div class="section-divider"></div>
+    
+    <section id="skills" class="fade-in with-bg">
         <h2 class="section-title">Technical Skills</h2>
         <div class="skills">
-            <div>
-                <h3>Languages & Frameworks</h3>
-                <p>Java, C#, C++, JavaScript, .NET, React</p>
+            <div class="skill-category">
+                <h3><i class="fas fa-code"></i> Languages & Frameworks</h3>
+                <div class="skill-badges">
+                    <span class="skill-badge">Java</span>
+                    <span class="skill-badge">C#</span>
+                    <span class="skill-badge">C++</span>
+                    <span class="skill-badge">JavaScript</span>
+                    <span class="skill-badge">.NET</span>
+                    <span class="skill-badge">React</span>
+                </div>
             </div>
-            <div>
-                <h3>Cloud & DevOps</h3>
-                <p>Azure (AKS, ACR, Key Vault, Cosmos DB), Docker, Kubernetes, Helm, GitHub Actions</p>
+            <div class="skill-category">
+                <h3><i class="fas fa-database"></i> Databases & Messaging</h3>
+                <div class="skill-badges">
+                    <span class="skill-badge">MongoDB</span>
+                    <span class="skill-badge">Postgres</span>
+                    <span class="skill-badge">MySQL</span>
+                    <span class="skill-badge">MassTransit</span>
+                    <span class="skill-badge">SignalR</span>
+                    <span class="skill-badge">RabbitMQ</span>
+                    <span class="skill-badge">Azure Service Bus</span>
+                </div>
             </div>
-            <div>
-                <h3>Architecture & Design</h3>
-                <p>DDD, Event-Driven Architecture, Distributed Microservices</p>
+            <div class="skill-category">
+                <h3><i class="fas fa-cloud"></i> Cloud Platforms</h3>
+                <div class="skill-badges">
+                    <span class="skill-badge">Azure</span>
+                    <span class="skill-badge">AKS</span>
+                    <span class="skill-badge">ACR</span>
+                    <span class="skill-badge">Key Vault</span>
+                    <span class="skill-badge">Cosmos DB</span>
+                    <span class="skill-badge">Service Bus</span>
+                </div>
+            </div>
+            <div class="skill-category">
+                <h3><i class="fas fa-server"></i> DevOps & Automation</h3>
+                <div class="skill-badges">
+                    <span class="skill-badge">Docker</span>
+                    <span class="skill-badge">Kubernetes</span>
+                    <span class="skill-badge">Helm</span>
+                    <span class="skill-badge">Docker Compose</span>
+                    <span class="skill-badge">GitHub Actions</span>
+                </div>
+            </div>
+            <div class="skill-category">
+                <h3><i class="fas fa-chart-line"></i> Monitoring & Observability</h3>
+                <div class="skill-badges">
+                    <span class="skill-badge">OpenTelemetry</span>
+                    <span class="skill-badge">Prometheus</span>
+                    <span class="skill-badge">Grafana</span>
+                    <span class="skill-badge">Seq</span>
+                    <span class="skill-badge">Jaeger</span>
+                </div>
+            </div>
+            <div class="skill-category">
+                <h3><i class="fas fa-sitemap"></i> Practices & Architecture</h3>
+                <div class="skill-badges">
+                    <span class="skill-badge">Git</span>
+                    <span class="skill-badge">REST APIs</span>
+                    <span class="skill-badge">CI/CD</span>
+                    <span class="skill-badge">Unit Testing</span>
+                    <span class="skill-badge">SDLC</span>
+                    <span class="skill-badge">DDD</span>
+                    <span class="skill-badge">Event-Driven</span>
+                    <span class="skill-badge">Microservices</span>
+                </div>
             </div>
         </div>
     </section>
 
-    <section id="projects" class="fade-in">
+    <div class="section-divider"></div>
+    
+    <section id="projects" class="fade-in with-bg">
         <h2 class="section-title">Projects</h2>
         <div class="projects-grid">
 
@@ -80,7 +143,8 @@
                 <div class="project-card__header">
                     <div class="project-card__heading">
                         <h3 class="project-card__title">GamePlayEconomy</h3>
-                        <p class="project-card__subtitle">Cloud-native player economy platform powering secure guild trading and live ops analytics.</p>
+                        <p class="project-card__subtitle">Cloud-native player economy platform powering secure guild
+                            trading and live ops analytics.</p>
                     </div>
                     <span class="project-card__accent">Flagship Build</span>
                 </div>
@@ -92,15 +156,20 @@
                         <span class="project-tag">AKS</span>
                     </div>
                     <ul class="project-highlights">
-                        <li>Implemented MassTransit orchestration across RabbitMQ and Azure Service Bus to keep player trades transactionally consistent.</li>
-                        <li>Configured IdentityServer with OAuth 2.0 and scoped JWT roles to secure partner APIs and internal admin tooling.</li>
-                        <li>Automated AKS releases through GitHub Actions and Helm while wiring Seq, Jaeger, and Prometheus into the gateway for deploy-time telemetry.</li>
+                        <li>Event-driven microservices with MassTransit and Saga pattern for distributed consistency.
+                        </li>
+                        <li>OAuth 2.0 / JWT auth via IdentityServer.</li>
+                        <li>Resilience patterns (Polly, circuit breakers, idempotent tracking).</li>
+                        <li>React SPA + SignalR for real-time user interactions.</li>
+                        <li>Automated CI/CD with Helm-based AKS deployments + TLS secured API Gateway.</li>
+                        <li>Full Open Telemetry observability stack (Seq, Jaeger, Prometheus).</li>
                     </ul>
                     <div class="project-links">
                         <a class="project-link project-link--live" href="https://gameplayeconomy.com" target="_blank">
                             <i class="fas fa-external-link-alt"></i><span>Live</span>
                         </a>
-                        <a class="project-link project-link--code" href="https://github.com/dotnetmicroservices001" target="_blank">
+                        <a class="project-link project-link--code" href="https://github.com/dotnetmicroservice001"
+                            target="_blank">
                             <i class="fab fa-github"></i><span>GitHub · dotnetmicroservices001</span>
                         </a>
                     </div>
@@ -111,9 +180,9 @@
                 <div class="project-card__header">
                     <div class="project-card__heading">
                         <h3 class="project-card__title">SpoonTab</h3>
-                        <p class="project-card__subtitle">Multi-tenant POS SaaS that keeps kitchen, floor, and finance teams in sync end-to-end.</p>
+                        <p class="project-card__subtitle">Multi-tenant POS SaaS that keeps kitchen, floor, and finance
+                            teams in sync end-to-end.</p>
                     </div>
-                    <span class="project-card__accent">Product Launch</span>
                 </div>
                 <div class="project-card__content">
                     <div class="project-card__tags">
@@ -123,15 +192,19 @@
                         <span class="project-tag">Azure</span>
                     </div>
                     <ul class="project-highlights">
-                        <li>Delivered restaurant ordering, payments, and floor operations through microservices and real-time messaging to keep POS terminals aligned.</li>
-                        <li>Established tenant-aware IdentityServer policies and JWT scopes that matched restaurant staffing models without adding friction.</li>
-                        <li>Integrated Stripe Checkout, Helm-managed AKS rollouts, and Cosmos DB backups so payment workflows remain resilient and recoverable.</li>
+                        <li>Distributed microservices for real-time orders, payments, and staff management.</li>
+                        <li>Tenant-aware IAM service with JWT auth via IdentityServer.</li>
+                        <li>Stripe Checkout integration with webhook validation.</li>
+                        <li>React POS UI with table layouts & real-time updates.</li>
+                        <li>Azure provisioning (AKS, ACR, Key Vault, Service Bus, Cosmos) via Helm.</li>
+                        <li>Versioned rollbacks for resilient deployments.</li>
                     </ul>
                     <div class="project-links">
                         <a class="project-link project-link--live" href="https://spoontab.com" target="_blank">
                             <i class="fas fa-external-link-alt"></i><span>Live</span>
                         </a>
-                        <a class="project-link project-link--code" href="https://github.com/basnets24/restaurant.pos" target="_blank">
+                        <a class="project-link project-link--code" href="https://github.com/basnets24/restaurant.pos"
+                            target="_blank">
                             <i class="fab fa-github"></i><span>GitHub · restaurant.pos</span>
                         </a>
                     </div>
@@ -142,7 +215,8 @@
                 <div class="project-card__header">
                     <div class="project-card__heading">
                         <h3 class="project-card__title">CampusConnect</h3>
-                        <p class="project-card__subtitle">Desktop office-hours companion that gives professors and students a calm, reliable scheduling flow.</p>
+                        <p class="project-card__subtitle">Desktop office-hours companion that gives professors and
+                            students a calm, reliable scheduling flow.</p>
                     </div>
                     <span class="project-card__accent">Campus Collab</span>
                 </div>
@@ -153,9 +227,9 @@
                         <span class="project-tag">MVC</span>
                     </div>
                     <ul class="project-highlights">
-                        <li>Built a JavaFX + MySQL scheduler with MVC validation to prevent overlapping appointments for faculty and students.</li>
-                        <li>Published CSV exports and scheduling views so staff could review bookings without digging through the database.</li>
-                        <li>Kept the team moving by owning Git reviews, repo hygiene, and pair-debugging whenever a blocker showed up.</li>
+                        <li>Team project to schedule professor office hours.</li>
+                        <li>JavaFX UI with CRUD operations and validation for non-overlapping bookings.</li>
+                        <li>MVC architecture + unit testing + GitHub collaboration workflow.</li>
                     </ul>
                     <div class="project-links">
                         <a class="project-link project-link--code" href="https://github.com/basnets24/CampusConnect"
@@ -169,20 +243,32 @@
         </div>
     </section>
 
-    <section id="contact" class="contact fade-in">
+    <div class="section-divider"></div>
+    
+    <section id="contact" class="contact fade-in with-bg">
         <h2 class="section-title">Contact</h2>
         <p>📍 San Jose, CA</p>
-        <p>📧 <a href="mailto:snehabasnet224@gmail.com">snehabasnet224@gmail.com</a></p>
-        <p>
-            🔗
-            <a href="https://linkedin.com/in/snehabasnet" target="_blank">LinkedIn</a> |
-            <a href="https://github.com/basnets24" target="_blank">GitHub</a> |
-            <a href="https://snehabasnet.com" target="_blank">Portfolio</a>
-        </p>
+        <p>Always open to opportunities, collaborations, and learning!</p>
+        
+        <div class="contact-links">
+            <a href="mailto:snehabasnet224@gmail.com" class="contact-link">
+                <i class="fas fa-envelope"></i> Email
+            </a>
+            <a href="https://linkedin.com/in/snehabasnet" target="_blank" class="contact-link">
+                <i class="fab fa-linkedin"></i> LinkedIn
+            </a>
+            <a href="https://github.com/basnets24" target="_blank" class="contact-link">
+                <i class="fab fa-github"></i> GitHub
+            </a>
+            <a href="Sneha_Basnet_SDE_Intern_Resume.pdf" target="_blank" class="contact-link">
+                <i class="fas fa-file-pdf"></i> Resume
+            </a>
+        </div>
         <p>Always open to opportunities, collaborations, and learning!</p>
     </section>
 
-    <footer>© 2025 Sneha Basnet · <a href="Sneha_Basnet_SDE_Intern_Resume.pdf" target="_blank">Résumé</a> · Built with 💙 using HTML, CSS, and JavaScript.</footer>
+    <footer>© 2025 Sneha Basnet · <a href="Sneha_Basnet_SDE_Intern_Resume.pdf" target="_blank">Résumé</a> · Built with
+        💙 using HTML, CSS, and JavaScript.</footer>
 
     <script defer src="script.js"></script>
 

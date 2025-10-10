@@ -88,3 +88,16 @@ const appearOnScroll = new IntersectionObserver((entries, observer) =>
     });
 }, appearOptions);
 faders.forEach(fader => appearOnScroll.observe(fader));
+
+// Create progress bar element
+const progressBar = document.createElement('div');
+progressBar.className = 'scroll-progress';
+document.body.appendChild(progressBar);
+
+// Update progress bar width based on scroll position
+window.addEventListener('scroll', function() {
+    const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+    const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    const scrolled = (scrollTop / scrollHeight) * 100;
+    progressBar.style.width = scrolled + '%';
+});
