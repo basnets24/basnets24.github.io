@@ -6,9 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Sneha Basnet | Software Engineer Portfolio" />
     <title>Sneha Basnet | Portfolio</title>
-
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/5df2fbc6b7.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
     <!-- Organized CSS files -->
     <link rel="stylesheet" href="css/main.css">
@@ -31,9 +30,12 @@
             <a href="#skills" class="nav-link">Skills</a>
             <a href="#projects" class="nav-link">Projects</a>
             <a href="#contact" class="nav-link">Contact</a>
-            <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch to light theme">
-                <i class="fas fa-sun"></i>
-            </button>
+            <div class="nav-links__header">
+                <span class="nav-links__label">Theme</span>
+                <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch to light theme">
+                    <i class="fas fa-sun"></i>
+                </button>
+            </div>
         </div>
     </nav>
 
@@ -42,10 +44,10 @@
         <h2>From class projects to cloud deployments — I'm learning by building.</h2>
         <p>CS @ San José State University (GPA 3.90) • Backend & Cloud Developer</p>
         <div class="cta-buttons">
-            <a class="cta-button cta-button--primary" href="#projects">View Projects</a>
+            <a class="cta-button cta-button--primary" href="#projects">Explore My Work</a>
             <a class="cta-button cta-button--outline" href="Sneha_Basnet_SDE_Intern_Resume.pdf" target="_blank">Download
-                Résumé</a>
-            <a class="cta-button cta-button--outline" href="#contact">Get in Touch</a>
+                Resume</a>
+            <a class="cta-button cta-button--outline" href="#contact">Let’s Connect!</a>
         </div>
     </header>
 
@@ -148,10 +150,26 @@
             <div class="project-card">
                 <div class="project-card__header">
                     <div class="project-card__heading">
-                        <h3 class="project-card__title">GamePlayEconomy <a href="https://gameplayeconomy.com"
-                                target="_blank" class="title-link-arrow">View</a></h3>
-                        <p class="project-card__subtitle">Cloud-native player economy platform powering secure guild
-                            trading and live ops analytics.</p>
+                        <div class="project-card__title-row">
+                            <h3 class="project-card__title">
+                                <a href="https://gameplayeconomy.com" target="_blank" rel="noopener noreferrer"
+                                    class="project-card__title-link">GamePlayEconomy</a>
+                            </h3>
+                            <div class="project-links project-links--inline">
+                                <a class="project-link" href="https://gameplayeconomy.com" target="_blank"
+                                    rel="noopener noreferrer">
+                                    <i class="fa-solid fa-globe"></i>
+                                    <span>Website</span>
+                                </a>
+                                <a class="project-link" href="https://github.com/dotnetmicroservice001"
+                                    target="_blank" rel="noopener noreferrer">
+                                    <i class="fa-brands fa-github"></i>
+                                    <span>GitHub</span>
+                                </a>
+                            </div>
+                        </div>
+                        <p class="project-card__subtitle">Cloud-native game economy platform that simulates virtual
+                            trading systems.</p>
                     </div>
                     <span class="project-card__accent">Flagship Build</span>
                 </div>
@@ -159,8 +177,8 @@
                     <div class="project-card__tags">
                         <span class="project-tag">.NET</span>
                         <span class="project-tag">React</span>
-                        <span class="project-tag">RabbitMQ</span>
-                        <span class="project-tag">AKS</span>
+                        <span class="project-tag">RabbitMQ/Azure Service Bus</span>
+                        <span class="project-tag">Azure Kubernetes Service</span>
                     </div>
                     <ul class="project-highlights">
                         <li>Event-driven microservices with MassTransit and Saga pattern for distributed consistency.
@@ -171,25 +189,32 @@
                         <li>Automated CI/CD with Helm-based AKS deployments + TLS secured API Gateway.</li>
                         <li>Full Open Telemetry observability stack (Seq, Jaeger, Prometheus).</li>
                     </ul>
-                    <div class="project-links">
-                        <a class="project-link project-link--live" href="https://gameplayeconomy.com" target="_blank">
-                            <i class="fas fa-external-link-alt"></i><span>Live</span>
-                        </a>
-                        <a class="project-link project-link--code" href="https://github.com/dotnetmicroservice001"
-                            target="_blank">
-                            <i class="fab fa-github"></i><span>GitHub </span>
-                        </a>
-                    </div>
                 </div>
             </div>
 
             <div class="project-card">
                 <div class="project-card__header">
                     <div class="project-card__heading">
-                        <h3 class="project-card__title">SpoonTab <a href="https://spoontab.com" target="_blank"
-                                class="title-link-arrow">View</a></h3>
-                        <p class="project-card__subtitle">Multi-tenant POS SaaS that keeps kitchen, floor, and finance
-                            teams in sync end-to-end.</p>
+                        <div class="project-card__title-row">
+                            <h3 class="project-card__title">
+                                <a href="https://spoontab.com" target="_blank" rel="noopener noreferrer"
+                                    class="project-card__title-link">SpoonTab</a>
+                            </h3>
+                            <div class="project-links project-links--inline">
+                                <a class="project-link" href="https://spoontab.com" target="_blank"
+                                    rel="noopener noreferrer">
+                                    <i class="fa-solid fa-globe"></i>
+                                    <span>Website</span>
+                                </a>
+                                <a class="project-link" href="https://github.com/basnets24/restaurant.pos"
+                                    target="_blank" rel="noopener noreferrer">
+                                    <i class="fa-brands fa-github"></i>
+                                    <span>GitHub</span>
+                                </a>
+                            </div>
+                        </div>
+                        <p class="project-card__subtitle">Modern restaurant POS platform designed for multi-tenant
+                            management and real-time operations.</p>
                     </div>
                 </div>
                 <div class="project-card__content">
@@ -207,26 +232,27 @@
                         <li>Azure provisioning (AKS, ACR, Key Vault, Service Bus, Cosmos) via Helm.</li>
                         <li>Versioned rollbacks for resilient deployments.</li>
                     </ul>
-                    <div class="project-links">
-                        <a class="project-link project-link--live" href="https://spoontab.com" target="_blank">
-                            <i class="fas fa-external-link-alt"></i><span>Live</span>
-                        </a>
-                        <a class="project-link project-link--code" href="https://github.com/basnets24/restaurant.pos"
-                            target="_blank">
-                            <i class="fab fa-github"></i><span>GitHub </span>
-                        </a>
-                    </div>
                 </div>
             </div>
 
             <div class="project-card">
                 <div class="project-card__header">
                     <div class="project-card__heading">
-                        <h3 class="project-card__title">CampusConnect <a
-                                href="https://github.com/basnets24/CampusConnect" target="_blank"
-                                class="title-link-arrow">GitHub</a></h3>
-                        <p class="project-card__subtitle">Desktop office-hours companion that gives professors and
-                            students a calm, reliable scheduling flow.</p>
+                        <div class="project-card__title-row">
+                            <h3 class="project-card__title">
+                                <a href="https://github.com/basnets24/CampusConnect" target="_blank"
+                                    rel="noopener noreferrer" class="project-card__title-link">CampusConnect</a>
+                            </h3>
+                            <div class="project-links project-links--inline">
+                                <a class="project-link" href="https://github.com/basnets24/CampusConnect"
+                                    target="_blank" rel="noopener noreferrer">
+                                    <i class="fa-brands fa-github"></i>
+                                    <span>GitHub</span>
+                                </a>
+                            </div>
+                        </div>
+                        <p class="project-card__subtitle">Desktop scheduling tool built with JavaFX to streamline
+                            faculty-student office hours.</p>
                     </div>
                     <span class="project-card__accent">Campus Collab</span>
                 </div>
@@ -241,12 +267,6 @@
                         <li>JavaFX UI with CRUD operations and validation for non-overlapping bookings.</li>
                         <li>MVC architecture + unit testing + GitHub collaboration workflow.</li>
                     </ul>
-                    <div class="project-links">
-                        <a class="project-link project-link--code" href="https://github.com/basnets24/CampusConnect"
-                            target="_blank">
-                            <i class="fab fa-github"></i><span>GitHub </span>
-                        </a>
-                    </div>
                 </div>
             </div>
 
