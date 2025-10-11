@@ -15,111 +15,6 @@
     <link rel="stylesheet" href="css/layout.css">
     <link rel="stylesheet" href="css/components.css">
 
-    <style>
-        .link-inline {
-            color: var(--muted);
-            text-decoration: none;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-            transition: color 0.2s ease, border-color 0.2s ease;
-        }
-
-        .link-inline:hover {
-            color: var(--accent);
-            border-color: var(--accent);
-        }
-
-        body[data-theme="light"] .link-inline {
-            border-bottom-color: rgba(0, 0, 0, 0.08);
-        }
-
-        /* .about-container {
-            display: flex;
-            align-items: flex-start;
-            gap: 2rem;
-            flex-wrap: wrap;
-        }
-
-        .about-photo {
-            width: 160px;
-            height: 160px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 2px solid var(--accent-color, #007bff);
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-        } */
-        .about-container {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 2rem;
-            flex-wrap: wrap;
-        }
-
-        .about-photo {
-            width: 180px;
-            height: 180px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 2px solid var(--accent-color, #007bff);
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-        }
-
-        .about-text {
-            flex: 1;
-            min-width: 260px;
-            max-width: 700px;
-            margin-inline: auto;
-        }
-
-        /* Medium screens (tablets) */
-        @media (max-width: 992px) {
-            .about-container {
-                flex-direction: column;
-                align-items: center;
-                text-align: center;
-            }
-
-            .about-text {
-                max-width: 90%;
-            }
-        }
-
-        /* Small screens (phones) */
-        @media (max-width: 600px) {
-            .about-text {
-                max-width: 100%;
-                font-size: 0.95rem;
-                line-height: 1.6;
-            }
-
-            .about-photo {
-                width: 140px;
-                height: 140px;
-                margin-bottom: 1rem;
-            }
-        }
-
-        .project-badge-inline {
-            color: var(--accent-color, #6fa8ff);
-            /* a lighter version of your link color */
-            font-size: 0.75rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.03em;
-            margin-left: 0.4rem;
-            opacity: 0.85;
-            color: #a0a6b5;
-            font-weight: 500;
-            opacity: 0.7;
-        }
-
-        .project-badge-inline::before {
-            content: " ";
-            color: var(--accent-color, #6fa8ff);
-            opacity: 0.7;
-        }
-    </style>
-
 </head>
 
 <body data-theme="dark">
@@ -149,7 +44,7 @@
 
     <header>
         <h1>Hi, I'm <span class="hero-name" data-typed-text="Sneha Basnet">Sneha Basnet</span></h1>
-        <h2>From class projects to cloud deployments - I'm learning by building.</h2>
+        <h2>From class projects to cloud deployments, I'm learning by building.</h2>
         <p>CS @ San Jose State University (GPA 3.90) • Backend & Cloud Developer</p>
         <div class="cta-buttons">
             <a class="cta-button cta-button--primary" href="#projects">Explore My Work</a>
@@ -159,20 +54,6 @@
         </div>
     </header>
 
-    <!-- <section id="about" class="about fade-in">
-        <h2 class="section-title">About Me</h2>
-        <p>
-            I'm a Computer Science student at <strong>San José State University</strong>, passionate about backend
-            systems,
-            distributed architectures, and developer-focused design.
-            <br><br>
-            With hands-on experience in cloud-native microservices and full-stack development, I love building systems
-            that are
-            scalable, observable, and resilient. I'm currently seeking a <strong>Software Engineering Internship (Summer
-                2026)</strong>
-            to contribute to large-scale systems and learn from world-class engineering teams.
-        </p>
-    </section> -->
     <section id="about" class="about fade-in">
         <div class="about-container">
             <img src="images/sneha.jpg" alt="Portrait of Sneha Basnet" class="about-photo" />
@@ -186,7 +67,7 @@
                 </p>
 
                 <p>
-                    I love designing systems that are <strong>scalable, observable, and resilient</strong> from class
+                    I love learning and designing systems that are <strong>scalable, observable, and resilient</strong> from class
                     projects to
                     cloud deployments. I'm currently seeking a <strong>Software Engineering Internship (Summer
                         2026)</strong>
@@ -261,7 +142,6 @@
                             alt="Azure Key Vault logo"><span>Key Vault</span></span>
                     <span class="skill-badge"><img class="skill-badge__icon" src="images/icon-cosmosdb.svg"
                             alt="Azure Cosmos DB logo"><span>Cosmos DB</span></span>
-                    <!-- <span class="skill-badge"><img class="skill-badge__icon" src="images/icon-azure-service-bus.svg" alt="Azure Service Bus logo"><span>Service Bus</span></span> -->
                 </div>
             </div>
             <div class="skill-category">
@@ -310,8 +190,7 @@
                     <span class="skill-badge"><i class="fas fa-cubes" aria-hidden="true"></i><span>DDD</span></span>
                     <span class="skill-badge"><i class="fas fa-share-alt"
                             aria-hidden="true"></i><span>Event-Driven</span></span>
-                    <span class="skill-badge"><i class="fas fa-th-large"
-                            aria-hidden="true"></i><span>Microservices</span></span>
+                    
                 </div>
             </div>
         </div>
@@ -343,7 +222,7 @@
                                 </a>
                             </div>
                         </div>
-                        <p class="project-card__subtitle">Cloud-native game economy platform that simulates virtual
+                        <p class="project-card__subtitle">Cloud native game economy platform that simulates virtual
                             trading systems.</p>
                     </div>
                 </div>
@@ -400,7 +279,7 @@
                             </div>
                         </div>
                         <p class="project-card__subtitle">Modern restaurant POS platform designed for multi-tenant
-                            management and real-time operations.</p>
+                            management and real time operations.</p>
                     </div>
                 </div>
                 <div class="project-card__content">
@@ -421,10 +300,10 @@
                         <span class="project-tag">GitHub Actions</span>
                     </div>
                     <ul class="project-highlights">
-                        <li>Distributed microservices for real-time orders, payments, and staff management.</li>
+                        <li>Distributed microservices for real time orders, payments, and staff management.</li>
                         <li>Tenant-aware IAM service with JWT auth via IdentityServer.</li>
                         <li>Stripe Checkout integration with webhook validation.</li>
-                        <li>React POS UI with table layouts & real-time updates.</li>
+                        <li>React POS UI with table layouts & real time updates.</li>
                         <li>Azure provisioning (AKS, ACR, Key Vault, Service Bus, Cosmos) via Helm.</li>
                         <li>Versioned rollbacks for resilient deployments.</li>
                     </ul>
