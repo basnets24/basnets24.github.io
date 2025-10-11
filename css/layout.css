@@ -1,0 +1,318 @@
+/**
+ * layout.css
+ * Layout styles for header, nav, sections, and components
+ */
+
+/* HEADER */
+header {
+    min-height: 92vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 1rem;
+    padding-top: 6rem;
+    background: linear-gradient(180deg, var(--hero-gradient-start) 0%, var(--hero-gradient-end) 100%);
+}
+
+header h1 {
+    font-size: 3.25rem;
+    color: var(--accent);
+    margin-bottom: .4rem;
+}
+
+header h2 {
+    font-weight: 400;
+    color: var(--text);
+    margin-bottom: 0.8rem;
+}
+
+/* NAVIGATION */
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: var(--nav-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.8rem 2rem;
+    z-index: 100;
+    border-bottom: 1px solid var(--nav-border);
+    transition: padding 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Add shadow on scroll */
+nav.scrolled {
+    padding: 0.65rem 2rem;
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.08);
+    background: var(--nav-bg);
+}
+
+.nav-brand {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-weight: 600;
+    color: var(--text);
+    font-size: 1.05rem;
+    letter-spacing: .01em;
+}
+
+.nav-logo {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    background: var(--primary);
+    color: white;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+}
+
+/* Nav links with indicator */
+.nav-links a {
+    position: relative;
+    padding: 0.4rem 0;
+    font-weight: 500;
+    letter-spacing: 0.01em;
+    opacity: 0.85;
+    text-decoration: none;
+    transition: all .25s ease;
+    font-size: 0.95rem;
+}
+
+.nav-links a:hover {
+    opacity: 1;
+    transform: translateY(-1px);
+}
+
+/* Active link indicator */
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background: var(--primary);
+    transition: width 0.3s ease;
+    border-radius: 2px;
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+    width: 100%;
+}
+
+/* Theme toggle */
+.theme-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.8rem;
+    height: 2.8rem;
+    border-radius: 8px;
+    border: 1px solid var(--button-border);
+    background: transparent;
+    color: var(--text);
+    cursor: pointer;
+    margin-left: 0.5rem;
+    transition: background .25s ease, border-color .25s ease, transform .25s ease, color .25s ease;
+}
+
+.theme-toggle:hover {
+    background: var(--button-hover-bg);
+    transform: translateY(-2px);
+}
+
+.theme-toggle i {
+    pointer-events: none;
+}
+
+/* Mobile navigation */
+.mobile-menu-toggle {
+    display: none;
+    background: transparent;
+    border: none;
+    color: var(--text);
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0.5rem;
+}
+
+/* ABOUT SECTION */
+.about p {
+    line-height: 1.8;
+    font-size: 1.15rem;
+}
+
+/* CONTACT SECTION */
+.contact-wrapper {
+    max-width: 800px;
+    margin: 0 auto 2rem;
+    padding: 0 1rem;
+}
+
+.contact-info {
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.contact-info p {
+    margin-bottom: 0.5rem;
+    font-size: 1.05rem;
+}
+
+.contact-info i {
+    color: var(--primary);
+    margin-right: 0.5rem;
+}
+
+.contact-links-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.contact-link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--button-bg);
+    padding: 0.7rem 1.2rem;
+    border-radius: 6px;
+    color: var(--text);
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: all 0.2s ease;
+}
+
+.contact-link:hover {
+    background: var(--button-hover-bg);
+    color: var(--primary);
+    transform: translateY(-2px);
+}
+
+.contact-link i {
+    color: var(--primary);
+    font-size: 1.1rem;
+}
+
+/* Progress bar */
+.scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 3px;
+    background: var(--primary);
+    z-index: 1000;
+    width: 0;
+    transition: width 0.1s ease;
+}
+
+/* RESPONSIVE STYLES */
+@media (max-width: 768px) {
+    .mobile-menu-toggle {
+        display: block;
+    }
+
+    .contact-links-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contact-link {
+        width: 100%;
+        max-width: 300px;
+        justify-content: center;
+    }
+
+    .nav-links {
+        position: fixed;
+        top: 70px;
+        right: -100%;
+        width: 80%;
+        max-width: 300px;
+        height: auto;
+        background: var(--bg);
+        flex-direction: column;
+        padding: 1.5rem;
+        border-radius: 12px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        opacity: 0;
+        transform: translateY(-10px);
+        transition: right 0.3s ease, opacity 0.3s ease, transform 0.3s ease;
+        z-index: 999;
+    }
+
+    .nav-links.show {
+        right: 10%;
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .nav-link {
+        width: 100%;
+        padding: 0.75rem 0;
+    }
+
+    .theme-toggle {
+        margin-top: 1rem;
+    }
+
+    .section-divider {
+        width: 95%;
+    }
+
+    .projects-grid {
+        padding: 0;
+    }
+
+    .project-card {
+        padding: 2rem 0;
+    }
+
+    .project-card__header,
+    .project-card__content {
+        padding: 0;
+    }
+
+    .project-highlights {
+        padding-left: 1rem;
+    }
+}
+
+/* Print styles for resume */
+@media print {
+
+    .nav-links,
+    .cta-buttons,
+    .theme-toggle {
+        display: none;
+    }
+
+    body {
+        color: #000;
+        background: #fff;
+    }
+
+    section {
+        page-break-inside: avoid;
+        padding: 1rem 0;
+    }
+}

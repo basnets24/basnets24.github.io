@@ -5,26 +5,32 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Sneha Basnet | Software Engineer Portfolio" />
-    <title>Sneha Basnet | Software Engineering Portfolio</title>
+    <title>Sneha Basnet | Portfolio</title>
 
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/5df2fbc6b7.js" crossorigin="anonymous"></script>
 
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="skill-badges.css">
-    <link rel="stylesheet" href="enhanced-visuals.css">
-    <link rel="stylesheet" href="scroll-progress.css">
+    <!-- Organized CSS files -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
 
 </head>
 
 <body data-theme="dark">
-    <nav>
-        <div class="nav-brand"><strong>Sneha Basnet</strong></div>
-        <div class="nav-links">
-            <a href="#about">About</a>
-            <a href="#skills">Skills</a>
-            <a href="#projects">Projects</a>
-            <a href="#contact">Contact</a>
+    <nav id="main-nav">
+        <div class="nav-brand">
+            <div class="nav-logo">S</div>
+            <strong>Sneha Basnet</strong>
+        </div>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle navigation menu">
+            <i class="fas fa-bars"></i>
+        </button>
+        <div class="nav-links" id="nav-links">
+            <a href="#about" class="nav-link">About</a>
+            <a href="#skills" class="nav-link">Skills</a>
+            <a href="#projects" class="nav-link">Projects</a>
+            <a href="#contact" class="nav-link">Contact</a>
             <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch to light theme">
                 <i class="fas fa-sun"></i>
             </button>
@@ -59,8 +65,8 @@
     </section>
 
     <div class="section-divider"></div>
-    
-    <section id="skills" class="fade-in with-bg">
+
+    <section id="skills" class="fade-in">
         <h2 class="section-title">Technical Skills</h2>
         <div class="skills">
             <div class="skill-category">
@@ -134,15 +140,16 @@
     </section>
 
     <div class="section-divider"></div>
-    
-    <section id="projects" class="fade-in with-bg">
+
+    <section id="projects" class="fade-in">
         <h2 class="section-title">Projects</h2>
         <div class="projects-grid">
 
             <div class="project-card">
                 <div class="project-card__header">
                     <div class="project-card__heading">
-                        <h3 class="project-card__title">GamePlayEconomy</h3>
+                        <h3 class="project-card__title">GamePlayEconomy <a href="https://gameplayeconomy.com"
+                                target="_blank" class="title-link-arrow">View</a></h3>
                         <p class="project-card__subtitle">Cloud-native player economy platform powering secure guild
                             trading and live ops analytics.</p>
                     </div>
@@ -170,7 +177,7 @@
                         </a>
                         <a class="project-link project-link--code" href="https://github.com/dotnetmicroservice001"
                             target="_blank">
-                            <i class="fab fa-github"></i><span>GitHub · dotnetmicroservices001</span>
+                            <i class="fab fa-github"></i><span>GitHub </span>
                         </a>
                     </div>
                 </div>
@@ -179,7 +186,8 @@
             <div class="project-card">
                 <div class="project-card__header">
                     <div class="project-card__heading">
-                        <h3 class="project-card__title">SpoonTab</h3>
+                        <h3 class="project-card__title">SpoonTab <a href="https://spoontab.com" target="_blank"
+                                class="title-link-arrow">View</a></h3>
                         <p class="project-card__subtitle">Multi-tenant POS SaaS that keeps kitchen, floor, and finance
                             teams in sync end-to-end.</p>
                     </div>
@@ -205,7 +213,7 @@
                         </a>
                         <a class="project-link project-link--code" href="https://github.com/basnets24/restaurant.pos"
                             target="_blank">
-                            <i class="fab fa-github"></i><span>GitHub · restaurant.pos</span>
+                            <i class="fab fa-github"></i><span>GitHub </span>
                         </a>
                     </div>
                 </div>
@@ -214,7 +222,9 @@
             <div class="project-card">
                 <div class="project-card__header">
                     <div class="project-card__heading">
-                        <h3 class="project-card__title">CampusConnect</h3>
+                        <h3 class="project-card__title">CampusConnect <a
+                                href="https://github.com/basnets24/CampusConnect" target="_blank"
+                                class="title-link-arrow">GitHub</a></h3>
                         <p class="project-card__subtitle">Desktop office-hours companion that gives professors and
                             students a calm, reliable scheduling flow.</p>
                     </div>
@@ -234,7 +244,7 @@
                     <div class="project-links">
                         <a class="project-link project-link--code" href="https://github.com/basnets24/CampusConnect"
                             target="_blank">
-                            <i class="fab fa-github"></i><span>GitHub · CampusConnect</span>
+                            <i class="fab fa-github"></i><span>GitHub </span>
                         </a>
                     </div>
                 </div>
@@ -244,31 +254,37 @@
     </section>
 
     <div class="section-divider"></div>
-    
-    <section id="contact" class="contact fade-in with-bg">
-        <h2 class="section-title">Contact</h2>
-        <p>📍 San Jose, CA</p>
-        <p>Always open to opportunities, collaborations, and learning!</p>
-        
-        <div class="contact-links">
-            <a href="mailto:snehabasnet224@gmail.com" class="contact-link">
-                <i class="fas fa-envelope"></i> Email
-            </a>
-            <a href="https://linkedin.com/in/snehabasnet" target="_blank" class="contact-link">
-                <i class="fab fa-linkedin"></i> LinkedIn
-            </a>
-            <a href="https://github.com/basnets24" target="_blank" class="contact-link">
-                <i class="fab fa-github"></i> GitHub
-            </a>
-            <a href="Sneha_Basnet_SDE_Intern_Resume.pdf" target="_blank" class="contact-link">
-                <i class="fas fa-file-pdf"></i> Resume
-            </a>
+
+    <section id="contact" class="fade-in">
+        <div class="card contact-card">
+            <h2 class="section-title">Contact</h2>
+
+            <div class="contact-wrapper">
+                <div class="contact-info">
+                    <p><i class="fas fa-map-marker-alt"></i>San Jose, CA</p>
+                    <p>Actively seeking Summer 2026 software engineering internships.</p>
+                    <p>Open to opportunities, collaborations, and learning!</p>
+                </div>
+
+                <div class="contact-links-container">
+                    <a href="mailto:snehabasnet224@gmail.com" class="contact-link">
+                        <i class="fas fa-envelope"></i> Email Me
+                    </a>
+                    <a href="https://linkedin.com/in/snehabasnet" target="_blank" class="contact-link">
+                        <i class="fab fa-linkedin"></i> LinkedIn
+                    </a>
+                    <a href="https://github.com/basnets24" target="_blank" class="contact-link">
+                        <i class="fab fa-github"></i> GitHub
+                    </a>
+                    <a href="Sneha_Basnet_SDE_Intern_Resume.pdf" target="_blank" class="contact-link">
+                        <i class="fas fa-file-pdf"></i> Resume
+                    </a>
+                </div>
+            </div>
         </div>
-        <p>Always open to opportunities, collaborations, and learning!</p>
     </section>
 
-    <footer>© 2025 Sneha Basnet · <a href="Sneha_Basnet_SDE_Intern_Resume.pdf" target="_blank">Résumé</a> · Built with
-        💙 using HTML, CSS, and JavaScript.</footer>
+    <footer>© 2025 Sneha Basnet · Built with 💙 using HTML, CSS, and JavaScript.</footer>
 
     <script defer src="script.js"></script>
 

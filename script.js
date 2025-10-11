@@ -95,9 +95,74 @@ progressBar.className = 'scroll-progress';
 document.body.appendChild(progressBar);
 
 // Update progress bar width based on scroll position
-window.addEventListener('scroll', function() {
+window.addEventListener('scroll', function ()
+{
     const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
     const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+
+    // Add scrolled class to nav when page is scrolled
+    const nav = document.getElementById('main-nav');
+    if (nav)
+    {
+        if (scrollTop > 50)
+        {
+            nav.classList.add('scrolled');
+        } else
+        {
+            nav.classList.remove('scrolled');
+        }
+    }
     const scrolled = (scrollTop / scrollHeight) * 100;
     progressBar.style.width = scrolled + '%';
+});
+
+// Mobile menu toggle
+const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+const navLinks = document.getElementById('nav-links');
+
+if (mobileMenuToggle && navLinks)
+{
+    mobileMenuToggle.addEventListener('click', () =>
+    {
+        navLinks.classList.toggle('show');
+        mobileMenuToggle.innerHTML = navLinks.classList.contains('show')
+            ? '<i class="fas fa-times"></i>'
+            : '<i class="fas fa-bars"></i>';
+    });
+
+    // Close menu when clicking a link
+    const navLinkElements = document.querySelectorAll('.nav-link');
+    navLinkElements.forEach(link =>
+    {
+        link.addEventListener('click', () =>
+        {
+            navLinks.classList.remove('show');
+            mobileMenuToggle.innerHTML = '<i class="fas fa-bars"></i>';
+        });
+    });
+}
+
+// Add active class to current section in navigation
+const sections = document.querySelectorAll('section[id]');
+window.addEventListener('scroll', () =>
+{
+    let current = '';
+    sections.forEach(section =>
+    {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.clientHeight;
+        if (window.pageYOffset >= sectionTop - 200)
+        {
+            current = section.getAttribute('id');
+        }
+    });
+
+    document.querySelectorAll('.nav-link').forEach(link =>
+    {
+        link.classList.remove('active');
+        if (link.getAttribute('href').substring(1) === current)
+        {
+            link.classList.add('active');
+        }
+    });
 });
