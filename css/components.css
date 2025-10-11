@@ -137,21 +137,101 @@ body[data-theme="light"] .card::before {
 }
 
 .skill-badge {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
     background: var(--chip-bg);
-    color: var(--chip-text);
     font-size: 0.85rem;
-    padding: 0.3em 0.7em;
-    border-radius: 100px;
+    padding: 0.35em 0.9em;
+    border-radius: 999px;
+    border: 1px solid transparent;
     margin-right: 0.3rem;
     margin-bottom: 0.4rem;
     font-weight: 400;
+    letter-spacing: 0.01em;
+    transition: transform 0.25s ease, color 0.25s ease, background-color 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
 }
 
 .skill-badge:hover {
     border-color: var(--primary);
-    color: var(--primary);
     transform: translateY(-2px);
+    box-shadow: 0 8px 18px rgba(79, 131, 255, 0.18);
+}
+
+.skill-badge:hover span {
+    color: var(--primary);
+}
+
+.skill-badge:hover i.fas,
+.skill-badge:hover i.far,
+.skill-badge:hover i.fab,
+.skill-badge:hover i.fa-solid,
+.skill-badge:hover i.fa-brands {
+    color: var(--primary);
+}
+
+.skill-badge i {
+    font-size: 1.05rem;
+    line-height: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.skill-badge__icon {
+    width: 1.15rem;
+    height: 1.15rem;
+    display: inline-block;
+    object-fit: contain;
+    filter: drop-shadow(0 0 2px rgba(0, 0, 0, 0.15));
+    transition: transform 0.25s ease, filter 0.25s ease;
+}
+
+.skill-badge img.skill-badge__icon {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 6px;
+    padding: 2px;
+}
+
+.skill-badge:hover img.skill-badge__icon {
+    filter: drop-shadow(0 0 4px rgba(79, 131, 255, 0.35));
+    transform: scale(1.05);
+}
+
+.skill-badge img.skill-badge__icon[alt*=\"Prometheus\"] {
+    background: rgba(218, 75, 43, 0.12);
+}
+
+.skill-badge span {
+    line-height: 1.2;
+    color: var(--chip-text);
+}
+
+.skill-badge i[class^="devicon-"],
+.skill-badge i[class*=" devicon-"] {
+    font-size: 1.1rem;
+}
+
+.skill-badge i.fas,
+.skill-badge i.far,
+.skill-badge i.fab,
+.skill-badge i.fa-solid,
+.skill-badge i.fa-brands {
+    color: var(--primary);
+    opacity: 0.9;
+}
+
+body[data-theme="light"] .skill-badge:hover {
+    box-shadow: 0 8px 18px rgba(197, 85, 127, 0.18);
+}
+
+body[data-theme="light"] .skill-badge img.skill-badge__icon {
+    background: rgba(0, 0, 0, 0.04);
+    filter: drop-shadow(0 0 1px rgba(0, 0, 0, 0.1));
+}
+
+body[data-theme="light"] .skill-badge:hover img.skill-badge__icon {
+    filter: drop-shadow(0 0 4px rgba(197, 85, 127, 0.25));
 }
 
 /* PROJECTS SECTION */
