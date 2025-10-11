@@ -99,14 +99,19 @@ a {
 
 /* General Layout */
 section {
-    padding: 4.5rem 1.5rem;
     max-width: 1000px;
-    margin: auto;
-    margin-top: 1.5rem;
-    margin-bottom: 3rem;
+    margin-left: auto;
+    margin-right: auto;
+    padding: clamp(2.27rem, 3.35vw, 3.07rem) clamp(0.73rem, 2vw, 1.17rem);
+    margin-top: clamp(0.8rem, 2.35vw, 1.2rem);
+    margin-bottom: clamp(1.33rem, 3.35vw, 2rem);
     background: transparent;
     border: none;
     box-shadow: none;
+}
+
+section:first-of-type {
+    margin-top: clamp(1.4rem, 3.5vw, 2.4rem);
 }
 
 /* Section Titles */
@@ -114,7 +119,7 @@ h2.section-title {
     text-align: left;
     color: var(--text);
     font-size: 2rem;
-    margin-bottom: 2rem;
+    margin-bottom: clamp(1.4rem, 2.6vw, 1.9rem);
     position: relative;
     font-weight: 600;
     display: inline-block;
@@ -202,4 +207,48 @@ body[data-theme="light"] .cta-button--outline {
 .cta-button--primary:hover {
     background: var(--primary-hover);
     box-shadow: var(--button-primary-shadow);
+}
+
+@media (max-width: 768px) {
+
+    h2.section-title {
+        font-size: 1.75rem;
+        margin-bottom: 1.35rem;
+    }
+
+    .section-divider {
+        width: 70%;
+        margin: 2rem auto;
+    }
+
+    .cta-buttons {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.9rem;
+    }
+
+    .cta-button {
+        width: 100%;
+        max-width: 320px;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 480px) {
+
+    h2.section-title {
+        font-size: 1.55rem;
+        margin-bottom: 1.2rem;
+    }
+
+    .cta-button {
+        max-width: 100%;
+        font-size: 0.95rem;
+        padding: 0.7rem 1.1rem;
+    }
+
+    footer {
+        padding: 1.25rem;
+        font-size: 0.9rem;
+    }
 }

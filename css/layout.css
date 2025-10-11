@@ -11,8 +11,7 @@ header {
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding: 0 1rem;
-    padding-top: 6rem;
+    padding: clamp(7.5rem, 14vw, 10rem) 1.75rem 4.25rem;
     background: linear-gradient(180deg, var(--hero-gradient-start) 0%, var(--hero-gradient-end) 100%);
     position: relative;
     overflow: hidden;
@@ -301,9 +300,53 @@ nav.scrolled {
 }
 
 /* RESPONSIVE STYLES */
+@media (max-width: 1024px) {
+
+    header {
+        padding: 6.5rem 1.5rem 3.85rem;
+        min-height: auto;
+    }
+
+    header h1 {
+        font-size: 2.8rem;
+        line-height: 1.15;
+    }
+
+    header h2 {
+        font-size: 1.15rem;
+        max-width: 640px;
+    }
+
+    header p {
+        max-width: 640px;
+    }
+
+    .projects-grid {
+        gap: 1.25rem;
+    }
+}
+
 @media (max-width: 768px) {
     .mobile-menu-toggle {
         display: block;
+    }
+
+    header {
+        padding: 5.8rem 1.25rem 3.25rem;
+        min-height: auto;
+    }
+
+    header h1 {
+        font-size: 2.35rem;
+        line-height: 1.15;
+    }
+
+    header h2 {
+        font-size: 1.02rem;
+    }
+
+    header p {
+        font-size: 0.95rem;
     }
 
     .contact-links-container {
@@ -375,6 +418,7 @@ nav.scrolled {
 
     .projects-grid {
         padding: 0;
+        gap: 1.1rem;
     }
 
     .project-card {
@@ -388,6 +432,30 @@ nav.scrolled {
 
     .project-highlights {
         padding-left: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+
+    header {
+        padding: 5.1rem 1rem 3rem;
+    }
+
+    header h1 {
+        font-size: 2rem;
+    }
+
+    header h2 {
+        font-size: 0.96rem;
+    }
+
+    header p {
+        font-size: 0.9rem;
+    }
+
+    .nav-links {
+        width: 88%;
+        max-width: 320px;
     }
 }
 

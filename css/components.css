@@ -63,15 +63,16 @@ body[data-theme="light"] .card::before {
 }
 
 .contact-card .contact-links-container {
-    justify-content: flex-start;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
     gap: clamp(0.75rem, 2vw, 1.25rem);
     padding-bottom: 0.25rem;
 }
 
 .contact-card .contact-link {
-    flex: 1 1 calc(25% - 1rem);
-    min-width: 170px;
+    width: 100%;
+    min-width: 0;
+    justify-content: center;
     white-space: nowrap;
 }
 
@@ -88,18 +89,11 @@ body[data-theme="light"] .card::before {
 
     .contact-card .contact-links-container {
         justify-content: flex-start;
-    }
-}
-
-@media (max-width: 640px) {
-
-    .contact-card .contact-links-container {
-        flex-wrap: wrap;
+        grid-template-columns: repeat(auto-fit, minmax(200px, max-content));
     }
 
     .contact-card .contact-link {
-        flex: 1 1 100%;
-        justify-content: center;
+        justify-content: flex-start;
     }
 }
 
@@ -166,19 +160,22 @@ body[data-theme="light"] .card::before {
     flex-direction: column;
     gap: 1.5rem;
     padding: 0;
-    margin-top: 1.5rem;
+    margin-top: 0;
 }
 
 .project-card {
     position: relative;
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
-    padding: 2.5rem 0;
-    margin: 1rem 0;
+    padding: 0;
+    margin: 0.75rem 0;
     border-bottom: 1px solid var(--border);
     background: transparent;
     transition: all .25s ease;
+}
+
+.projects-grid>.project-card:first-child {
+    margin-top: 0;
 }
 
 .project-card:hover {
@@ -222,7 +219,6 @@ body[data-theme="light"] .card::before {
 .project-card__content {
     display: flex;
     flex-direction: column;
-    gap: 1.2rem;
     padding: 0;
     margin-top: 0.5rem;
 }
@@ -313,6 +309,21 @@ body[data-theme="light"] .card::before {
     margin-bottom: 1rem;
 }
 
+@media (max-width: 1024px) {
+
+    .project-card__title {
+        font-size: 2rem;
+    }
+
+    .project-card__subtitle {
+        padding-right: 0;
+    }
+
+    .project-links--inline {
+        gap: 0.6rem;
+    }
+}
+
 .project-links {
     display: flex;
     flex-wrap: wrap;
@@ -371,6 +382,37 @@ body[data-theme="light"] .project-link {
     background: rgba(255, 255, 255, 0.7);
     border-color: rgba(197, 85, 127, 0.18);
     color: var(--text);
+}
+
+@media (max-width: 768px) {
+
+    .project-card__title {
+        font-size: 1.85rem;
+        margin-bottom: 0.75rem;
+    }
+
+    .project-card__title-row {
+        gap: 0.6rem;
+    }
+
+    .project-links--inline {
+        gap: 0.55rem;
+        flex-wrap: wrap;
+    }
+
+    .project-card__title-row .project-links--inline {
+        margin-left: 0;
+    }
+
+    .project-link {
+        font-size: 0.85rem;
+        padding: 0.5rem 0.95rem 0.5rem 0.8rem;
+    }
+
+    .project-highlights {
+        font-size: 0.93rem;
+        padding-left: 1rem;
+    }
 }
 
 @media (max-width: 640px) {

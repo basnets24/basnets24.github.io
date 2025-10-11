@@ -14,12 +14,119 @@
     <link rel="stylesheet" href="css/layout.css">
     <link rel="stylesheet" href="css/components.css">
 
+    <style>
+        .link-inline {
+            color: var(--muted);
+            text-decoration: none;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            transition: color 0.2s ease, border-color 0.2s ease;
+        }
+
+        .link-inline:hover {
+            color: var(--accent);
+            border-color: var(--accent);
+        }
+
+        body[data-theme="light"] .link-inline {
+            border-bottom-color: rgba(0, 0, 0, 0.08);
+        }
+
+        /* .about-container {
+            display: flex;
+            align-items: flex-start;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .about-photo {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--accent-color, #007bff);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+        } */
+        .about-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .about-photo {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--accent-color, #007bff);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .about-text {
+            flex: 1;
+            min-width: 260px;
+            max-width: 700px;
+            margin-inline: auto;
+        }
+
+        /* Medium screens (tablets) */
+        @media (max-width: 992px) {
+            .about-container {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .about-text {
+                max-width: 90%;
+            }
+        }
+
+        /* Small screens (phones) */
+        @media (max-width: 600px) {
+            .about-text {
+                max-width: 100%;
+                font-size: 0.95rem;
+                line-height: 1.6;
+            }
+
+            .about-photo {
+                width: 140px;
+                height: 140px;
+                margin-bottom: 1rem;
+            }
+        }
+
+        .project-badge-inline {
+            color: var(--accent-color, #6fa8ff);
+            /* a lighter version of your link color */
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+            margin-left: 0.4rem;
+            opacity: 0.85;
+            color: #a0a6b5;
+            font-weight: 500;
+            opacity: 0.7;
+        }
+
+        .project-badge-inline::before {
+            content: " ";
+            color: var(--accent-color, #6fa8ff);
+            opacity: 0.7;
+        }
+    </style>
+
 </head>
 
 <body data-theme="dark">
     <nav id="main-nav">
         <div class="nav-brand">
             <div class="nav-logo">S</div>
+
+
             <strong>Sneha Basnet</strong>
         </div>
         <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle navigation menu">
@@ -51,7 +158,7 @@
         </div>
     </header>
 
-    <section id="about" class="about fade-in">
+    <!-- <section id="about" class="about fade-in">
         <h2 class="section-title">About Me</h2>
         <p>
             I’m a Computer Science student at <strong>San José State University</strong>, passionate about backend
@@ -64,7 +171,40 @@
                 2026)</strong>
             to contribute to large-scale systems and learn from world-class engineering teams.
         </p>
+    </section> -->
+    <section id="about" class="about fade-in">
+        <div class="about-container">
+            <img src="images/sneha.jpg" alt="Portrait of Sneha Basnet" class="about-photo" />
+
+            <div class="about-text">
+                <h2 class="section-title">About Me</h2>
+                <p>
+                    I’m a Computer Science student at <strong>San Jose State University</strong>, passionate about
+                    backend systems,
+                    distributed architectures, and developer-focused design.
+                </p>
+
+                <p>
+                    I love designing systems that are <strong>scalable, observable, and resilient</strong>—from class
+                    projects to
+                    cloud deployments. I’m currently seeking a <strong>Software Engineering Internship (Summer
+                        2026)</strong>
+                    to contribute to large-scale systems and learn from world-class engineering teams.
+                </p>
+
+                <p>
+                    Outside of code, I pursue <strong>photography</strong> as a creative outlet—it helps me slow down
+                    and see details
+                    from new perspectives. You can view some of my work here:
+                    <a href="https://vsco.co/bunsneha" target="_blank" rel="noopener noreferrer" class="link-inline">
+                        vsco.co/bunsneha
+                    </a>.
+                </p>
+            </div>
+        </div>
     </section>
+
+
 
     <div class="section-divider"></div>
 
@@ -146,7 +286,6 @@
     <section id="projects" class="fade-in">
         <h2 class="section-title">Projects</h2>
         <div class="projects-grid">
-
             <div class="project-card">
                 <div class="project-card__header">
                     <div class="project-card__heading">
@@ -161,8 +300,8 @@
                                     <i class="fa-solid fa-globe"></i>
                                     <span>Website</span>
                                 </a>
-                                <a class="project-link" href="https://github.com/dotnetmicroservice001"
-                                    target="_blank" rel="noopener noreferrer">
+                                <a class="project-link" href="https://github.com/dotnetmicroservice001" target="_blank"
+                                    rel="noopener noreferrer">
                                     <i class="fa-brands fa-github"></i>
                                     <span>GitHub</span>
                                 </a>
@@ -171,7 +310,6 @@
                         <p class="project-card__subtitle">Cloud-native game economy platform that simulates virtual
                             trading systems.</p>
                     </div>
-                    <span class="project-card__accent">Flagship Build</span>
                 </div>
                 <div class="project-card__content">
                     <div class="project-card__tags">
@@ -254,7 +392,7 @@
                         <p class="project-card__subtitle">Desktop scheduling tool built with JavaFX to streamline
                             faculty-student office hours.</p>
                     </div>
-                    <span class="project-card__accent">Campus Collab</span>
+                    <!-- <span class="project-card__accent">Campus Collab</span> -->
                 </div>
                 <div class="project-card__content">
                     <div class="project-card__tags">
@@ -288,7 +426,7 @@
 
                 <div class="contact-links-container">
                     <a href="mailto:snehabasnet224@gmail.com" class="contact-link">
-                        <i class="fas fa-envelope"></i> Email Me
+                        <i class="fas fa-envelope"></i> Email
                     </a>
                     <a href="https://linkedin.com/in/snehabasnet" target="_blank" class="contact-link">
                         <i class="fab fa-linkedin"></i> LinkedIn

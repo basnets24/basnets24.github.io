@@ -1,6 +1,7 @@
 const themeStorageKey = 'sb-theme';
 const themeToggle = document.getElementById('theme-toggle');
 const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
+const mainNav = document.getElementById('main-nav');
 
 const themeStorage = (() =>
 {
@@ -101,15 +102,14 @@ window.addEventListener('scroll', function ()
     const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
 
     // Add scrolled class to nav when page is scrolled
-    const nav = document.getElementById('main-nav');
-    if (nav)
+    if (mainNav)
     {
         if (scrollTop > 50)
         {
-            nav.classList.add('scrolled');
+            mainNav.classList.add('scrolled');
         } else
         {
-            nav.classList.remove('scrolled');
+            mainNav.classList.remove('scrolled');
         }
     }
     const scrolled = (scrollTop / scrollHeight) * 100;
@@ -119,6 +119,35 @@ window.addEventListener('scroll', function ()
 // Mobile menu toggle
 const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
 const navLinks = document.getElementById('nav-links');
+const navLinkAnchors = document.querySelectorAll('.nav-link[href^="#"]');
+
+navLinkAnchors.forEach(link =>
+{
+    link.addEventListener('click', event =>
+    {
+        const targetId = link.getAttribute('href').slice(1);
+        const targetSection = document.getElementById(targetId);
+        if (!targetSection) return;
+
+        event.preventDefault();
+
+        const navHeight = mainNav ? mainNav.getBoundingClientRect().height : 0;
+        const offset = navHeight + 16;
+        const targetPosition = targetSection.getBoundingClientRect().top + window.pageYOffset - offset;
+        const scrollTarget = Math.max(targetPosition, 0);
+
+        window.scrollTo({ top: scrollTarget, behavior: 'smooth' });
+
+        if (navLinks && navLinks.classList.contains('show'))
+        {
+            navLinks.classList.remove('show');
+            if (mobileMenuToggle)
+            {
+                mobileMenuToggle.innerHTML = '<i class="fas fa-bars"></i>';
+            }
+        }
+    });
+});
 
 if (mobileMenuToggle && navLinks)
 {
@@ -131,15 +160,6 @@ if (mobileMenuToggle && navLinks)
     });
 
     // Close menu when clicking a link
-    const navLinkElements = document.querySelectorAll('.nav-link');
-    navLinkElements.forEach(link =>
-    {
-        link.addEventListener('click', () =>
-        {
-            navLinks.classList.remove('show');
-            mobileMenuToggle.innerHTML = '<i class="fas fa-bars"></i>';
-        });
-    });
 }
 
 // Add active class to current section in navigation
