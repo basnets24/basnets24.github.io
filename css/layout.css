@@ -77,9 +77,48 @@ body[data-theme="light"] header::after {
 }
 
 header h1 {
-    font-size: 3.25rem;
-    color: var(--accent);
-    margin-bottom: .4rem;
+    font-size: clamp(3rem, 3.5vw + 1.8rem, 4.3rem);
+    color: var(--text);
+    margin-bottom: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+}
+
+.hero-name {
+    display: inline-flex;
+    align-items: center;
+    position: relative;
+    font-weight: 800;
+    background: linear-gradient(120deg, var(--primary), var(--accent));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+body[data-theme="light"] .hero-name {
+    background: linear-gradient(120deg, var(--primary), rgba(197, 85, 127, 0.85));
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+
+.hero-name.typing-active::after {
+    content: "";
+    display: inline-block;
+    width: 0.035em;
+    height: 1.1em;
+    margin-left: 0.1em;
+    background: var(--primary);
+    animation: heroCursorBlink 0.8s steps(1) infinite;
+}
+
+@keyframes heroCursorBlink {
+    0%, 50% {
+        opacity: 1;
+    }
+
+    50.01%, 100% {
+        opacity: 0;
+    }
 }
 
 header h2 {

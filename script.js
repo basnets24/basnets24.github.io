@@ -76,6 +76,37 @@ else if (typeof prefersDark.addListener === 'function')
     prefersDark.addListener(handleSystemThemeChange);
 }
 
+const heroNameEl = document.querySelector('[data-typed-text]');
+if (heroNameEl)
+{
+    const fullText = (heroNameEl.getAttribute('data-typed-text') || heroNameEl.textContent || '').trim();
+    heroNameEl.setAttribute('aria-label', fullText);
+    heroNameEl.textContent = '';
+    heroNameEl.classList.add('typing-active');
+
+    let index = 0;
+    const typingSpeed = 90;
+    const typeNextCharacter = () =>
+    {
+        if (index <= fullText.length)
+        {
+            heroNameEl.textContent = fullText.slice(0, index);
+            index += 1;
+            if (index <= fullText.length)
+            {
+                setTimeout(typeNextCharacter, typingSpeed);
+            }
+            else
+            {
+                heroNameEl.classList.remove('typing-active');
+                heroNameEl.textContent = fullText;
+            }
+        }
+    };
+
+    setTimeout(typeNextCharacter, 450);
+}
+
 // Fade-in animation observer
 const faders = document.querySelectorAll('.fade-in');
 const appearOptions = { threshold: 0.2, rootMargin: '0px 0px -50px 0px' };
