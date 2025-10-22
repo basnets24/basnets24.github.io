@@ -269,7 +269,8 @@ nav.scrolled {
 /* ABOUT SECTION */
 .about p {
     line-height: 1.8;
-    font-size: 1.15rem;
+    font-size: 1.05rem;
+    margin-bottom: 1.2rem;
 }
 
 /* CONTACT SECTION */
