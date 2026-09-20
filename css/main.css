@@ -3,67 +3,75 @@
  * Main styles and variables for portfolio site
  */
 
-/* Color Variables & Theme */
+/* Color Variables & Theme — clean editorial palette: white, near-black text,
+   and a single deep burgundy accent. One theme only (no dark/light toggle). */
 :root {
-    --primary: #4f83ff;
-    --primary-hover: #3c6fe0;
-    --secondary: #ffffff;
-    --text: #f3f5f9;
-    --muted: #94a3b8;
-    --bg: #0c111a;
-    --accent: #7aa5ff;
-    --card: #141b24;
-    --border: rgba(79, 131, 255, 0.18);
-    --card-shadow: 0 18px 45px rgba(5, 8, 15, 0.45);
-    --card-shadow-hover: 0 24px 60px rgba(5, 8, 15, 0.6);
-    --nav-bg: rgba(12, 18, 26, 0.92);
-    --nav-border: rgba(79, 131, 255, 0.25);
-    --hero-gradient-start: #101726;
-    --hero-gradient-end: #0b121f;
-    --section-bg: rgba(17, 23, 32, 0.75);
-    --section-border: rgba(79, 131, 255, 0.12);
-    --section-shadow: 0 22px 55px rgba(5, 8, 15, 0.55);
-    --section-backdrop: blur(18px);
-    --chip-bg: rgba(79, 131, 255, 0.18);
-    --chip-text: #dbe4ff;
-    --tag-bg: rgba(79, 131, 255, 0.16);
-    --button-bg: rgba(79, 131, 255, 0.12);
-    --button-border: rgba(79, 131, 255, 0.28);
-    --button-hover-bg: rgba(79, 131, 255, 0.18);
-    --button-primary-shadow: 0 16px 32px rgba(79, 131, 255, 0.35);
-    --project-link-border: rgba(79, 131, 255, 0.25);
-    --project-link-bg: rgba(255, 255, 255, 0.04);
-}
+    /* Canonical palette */
+    --bg: #ffffff;
+    --text: #171717;
+    --text-muted: #6f6a6b;
+    --surface: #faf7f8;
+    /* --border: major dividers (between case studies, above the contact
+       band and footer). --border-soft: in-content dividers within a single
+       block (between experience focus items, above each Other Project). */
+    --border: #e8e3e4;
+    --border-soft: #f0ecee;
+    --accent: #8e3f56;
+    --accent-rgb: 142, 63, 86;
+    --accent-hover: #7a3348;
+    --accent-soft: #f6ecef;
 
-body[data-theme="light"] {
-    --primary: #c5557f;
-    --primary-hover: #b24f75;
+    /* Legacy/derived aliases — every component references these, so the
+       palette above is the single source of truth for the whole site. */
+    --primary: var(--accent);
+    --primary-hover: var(--accent-hover);
     --secondary: #ffffff;
-    --text: #211722;
-    --muted: #6c5b68;
-    --bg: #fdfcfe;
-    --accent: #d87a9c;
+    --muted: var(--text-muted);
     --card: #ffffff;
-    --border: rgba(197, 85, 127, 0.16);
-    --card-shadow: 0 18px 45px rgba(24, 17, 28, 0.08);
-    --card-shadow-hover: 0 22px 55px rgba(24, 17, 28, 0.12);
+    --border-strong: #d8d1d3;
+    --card-shadow: 0 8px 20px rgba(23, 23, 23, 0.06);
+    --card-shadow-hover: 0 10px 26px rgba(23, 23, 23, 0.09);
     --nav-bg: rgba(255, 255, 255, 0.92);
-    --nav-border: rgba(197, 85, 127, 0.18);
-    --hero-gradient-start: #fdfcfe;
-    --hero-gradient-end: #f6eef3;
-    --section-bg: transparent;
-    --section-border: transparent;
+    --nav-border: var(--border);
+    --section-bg: var(--surface);
+    --section-border: var(--border);
     --section-shadow: none;
     --section-backdrop: none;
-    --chip-bg: rgba(197, 85, 127, 0.08);
-    --chip-text: var(--primary);
-    --tag-bg: rgba(197, 85, 127, 0.12);
-    --button-bg: rgba(197, 85, 127, 0.06);
-    --button-border: rgba(33, 23, 34, 0.12);
-    --button-hover-bg: rgba(197, 85, 127, 0.12);
-    --button-primary-shadow: 0 16px 30px rgba(178, 76, 117, 0.3);
-    --project-link-border: rgba(33, 23, 34, 0.12);
-    --project-link-bg: var(--secondary);
+    --chip-bg: var(--surface);
+    --chip-text: var(--text-muted);
+    --tag-bg: var(--accent-soft);
+    --button-bg: var(--surface);
+    --button-border: var(--border);
+    --button-hover-bg: var(--accent-soft);
+    --project-link-border: var(--border);
+    --project-link-bg: #ffffff;
+    --success: var(--accent);
+    --success-label: var(--accent-hover);
+    --success-bg: var(--accent-soft);
+    --success-border: rgba(var(--accent-rgb), 0.22);
+
+    /* Spacing scale — one set of values, reused everywhere, instead of a
+       bespoke gap per section. Every section-to-section transition, every
+       heading, every title/metadata pair, and every paragraph stack pulls
+       from this scale rather than inventing its own number.
+         --space-page-x      page edge padding            (16-20px)
+         --space-section-*   top/bottom section padding — combined gap
+                              between one section's content and the next
+                              section's title is a constant 72px
+         --space-heading-*   section title -> its content  (24-28px)
+         --space-title-meta  title -> its metadata line     (8-12px)
+         --space-para        paragraph -> next content      (16-20px) */
+    --space-page-x: clamp(1rem, 2vw, 1.15rem);
+    --space-section-pad-top: 3rem;
+    --space-section-pad-bottom: 1rem;
+    --space-section-pad-top-tablet: 2.5rem;
+    --space-section-pad-bottom-tablet: 0.9rem;
+    --space-section-pad-top-mobile: 2.35rem;
+    --space-section-pad-bottom-mobile: 0.85rem;
+    --space-heading-gap: 1.5rem;
+    --space-heading-gap-mobile: 1.3rem;
+    --space-title-meta: 0.6rem;
+    --space-para: 1rem;
 }
 
 /* Base Styles */
@@ -77,10 +85,17 @@ html {
     box-sizing: border-box;
 }
 
-/* Better focus styles without the blue outline */
-a:focus,
-button:focus {
+/* Remove the default outline only for mouse/touch focus; keyboard focus keeps a visible indicator */
+a:focus:not(:focus-visible),
+button:focus:not(:focus-visible) {
     outline: none;
+}
+
+a:focus-visible,
+button:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+    border-radius: 4px;
 }
 
 body {
@@ -98,30 +113,86 @@ a {
 }
 
 /* General Layout */
+/* One vertical rhythm, driven entirely by the spacing scale above: every
+   section ends --space-section-pad-bottom after its content and the next
+   begins --space-section-pad-top before its title, so every section-to-
+   section gap in the page is the same constant (72px at desktop, scaled
+   down at narrower breakpoints) — no section gets a bespoke extra value.
+   No decorative dividers, except the single hero-to-Experience hairline
+   below, which marks the one deliberate chapter break on the page rather
+   than a section-to-section continuation. */
 section {
-    max-width: 1000px;
-    margin-left: auto;
-    margin-right: auto;
-    padding: clamp(2.27rem, 3.35vw, 3.07rem) clamp(0.73rem, 2vw, 1.17rem);
-    margin-top: clamp(0.8rem, 2.35vw, 1.2rem);
-    margin-bottom: clamp(1.33rem, 3.35vw, 2rem);
+    /* Content width stays a constant 964px (matching the hero/nav column)
+       regardless of viewport: the side padding is added on top of it here
+       instead of carved out of a fixed 1000px box, so both containers share
+       one left/right edge at every width, not just above ~1200px. */
+    max-width: calc(964px + clamp(1.2rem, 3vw, 2rem));
+    margin: 0 auto;
+    padding: var(--space-section-pad-top) var(--space-page-x) var(--space-section-pad-bottom);
     background: transparent;
     border: none;
     box-shadow: none;
 }
 
-section:first-of-type {
-    margin-top: clamp(1.4rem, 3.5vw, 2.4rem);
+@media (max-width: 768px) {
+    section {
+        padding-top: var(--space-section-pad-top-tablet);
+        padding-bottom: var(--space-section-pad-bottom-tablet);
+    }
 }
 
-/* Section Titles */
+@media (max-width: 480px) {
+    section {
+        padding-top: var(--space-section-pad-top-mobile);
+        padding-bottom: var(--space-section-pad-bottom-mobile);
+    }
+}
+
+/* The one chapter break on the page: hero closes on "who she is", Experience
+   opens on "proof of what she's done". A hairline in the existing neutral
+   border color is the only differentiator — the top padding itself is the
+   same shared section rhythm as everywhere else. */
+#experience {
+    border-top: 1px solid var(--border);
+}
+
+/* Experience-to-Projects: no hairline, no numbering — the background itself
+   is the separator. Experience stays structured and white; Projects (plus
+   the smaller Other Projects that continues the same story) sits on the
+   same warm off-white already used for surfaces elsewhere on the page, so
+   the shift reads as "a different kind of content starts here" rather than
+   a decoration. The two sections share one continuous tint with no visible
+   seam between them, since neither has a border where they meet. */
+#projects,
+#other-projects {
+    position: relative;
+    z-index: 0;
+}
+
+#projects::before,
+#other-projects::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 100vw;
+    transform: translateX(-50%);
+    background: var(--surface);
+    z-index: -1;
+}
+
+/* Section Titles — one consistent size/weight/underline treatment across
+   every section, rather than a different scale per section. */
 h2.section-title {
     text-align: left;
     color: var(--text);
-    font-size: 2rem;
-    margin-bottom: clamp(1.4rem, 2.6vw, 1.9rem);
+    font-size: 1.75rem;
+    line-height: 1.2;
+    margin-bottom: var(--space-heading-gap);
     position: relative;
     font-weight: 600;
+    letter-spacing: -0.005em;
     display: inline-block;
 }
 
@@ -131,30 +202,53 @@ h2.section-title::after {
     height: 2px;
     background: var(--primary);
     display: block;
-    margin: .4rem 0;
-    border-radius: 2px;
-    opacity: 0.7;
+    margin: 0.45rem 0 0;
+    border-radius: 1px;
+    opacity: 0.75;
 }
 
-/* Section dividers */
-.section-divider {
-    height: 1px;
-    background: linear-gradient(90deg, transparent, var(--primary) 50%, transparent);
-    opacity: 0.15;
-    width: 50%;
-    max-width: 600px;
-    margin: 2.5rem auto;
-    border-radius: 2px;
+/* Featured Projects' own project names (.case-study__title, 1.5rem/800)
+   should be the strongest text in the section — dialed back from the
+   shared 1.75rem/600 scale so the heading introduces the section without
+   competing with the work itself. */
+#projects .section-title {
+    font-size: 1.4rem;
+}
+
+@media (max-width: 768px) {
+    #projects .section-title {
+        font-size: 1.3rem;
+    }
+}
+
+/* Experience is the first thing after the now-compact mobile hero, so its
+   heading is dialed back a step rather than running at the shared scale —
+   it should feel like the next thing, not another shout. */
+@media (max-width: 768px) {
+    #experience .section-title {
+        font-size: 1.15rem;
+        margin-bottom: var(--space-heading-gap-mobile);
+    }
+}
+
+/* Technical Skills' heading is the opposite case from Projects': there's
+   no competing project name inside the section, so the heading itself
+   should read as clearly dominant over the six category labels beneath
+   it. Heavier weight and tighter tracking, same 1.75rem size as the
+   shared scale. */
+#skills .section-title {
+    font-weight: 700;
+    letter-spacing: -0.01em;
 }
 
 /* Footer */
 footer {
-    margin-top: 3rem;
-    padding: 1.5rem;
+    margin-top: var(--space-section-pad-bottom);
+    padding: var(--space-para) 1.25rem calc(var(--space-para) + 0.15rem);
     text-align: center;
     color: var(--muted);
     border-top: 1px solid var(--border);
-    font-size: 0.95rem;
+    font-size: 0.85rem;
 }
 
 /* Buttons */
@@ -178,24 +272,19 @@ footer {
     border: 1px solid var(--button-border);
     color: var(--text);
     background: var(--button-bg);
-    transition: background .25s ease, border-color .25s ease, transform .25s ease, color .25s ease;
+    transition: background .2s ease, border-color .2s ease, transform .2s ease, color .2s ease;
 }
 
 .cta-button--primary {
     background: var(--primary);
     border-color: transparent;
     color: var(--secondary);
-    box-shadow: var(--button-primary-shadow);
 }
 
 .cta-button--outline {
-    background: transparent;
-    color: var(--accent);
-}
-
-body[data-theme="light"] .cta-button--outline {
     background: var(--secondary);
     color: var(--text);
+    border-color: var(--border);
 }
 
 .cta-button:hover {
@@ -206,39 +295,56 @@ body[data-theme="light"] .cta-button--outline {
 
 .cta-button--primary:hover {
     background: var(--primary-hover);
-    box-shadow: var(--button-primary-shadow);
+    border-color: transparent;
+    transform: translateY(-1px);
+}
+
+.cta-button--outline:hover {
+    color: var(--accent);
+    border-color: var(--accent);
+    background: var(--accent-soft);
 }
 
 @media (max-width: 768px) {
 
     h2.section-title {
-        font-size: 1.75rem;
-        margin-bottom: 1.35rem;
+        font-size: 1.55rem;
+        margin-bottom: var(--space-heading-gap-mobile);
     }
 
-    .section-divider {
-        width: 70%;
-        margin: 2rem auto;
-    }
 
     .cta-buttons {
+        display: flex;
         flex-direction: column;
-        align-items: stretch;
-        gap: 0.9rem;
+        align-items: center;
+        gap: 0.75rem;
     }
 
     .cta-button {
+        padding: .64rem 1rem;
+    }
+
+    .cta-button--primary {
         width: 100%;
-        max-width: 320px;
-        margin: 0 auto;
+    }
+
+    .cta-button--outline {
+        width: auto;
+        min-width: 45%;
+        padding-left: 1.75rem;
+        padding-right: 1.75rem;
+    }
+
+    .hero-secondary-links {
+        gap: 1.1rem;
     }
 }
 
 @media (max-width: 480px) {
 
     h2.section-title {
-        font-size: 1.55rem;
-        margin-bottom: 1.2rem;
+        font-size: 1.4rem;
+        margin-bottom: var(--space-heading-gap-mobile);
     }
 
     .cta-button {
@@ -248,7 +354,7 @@ body[data-theme="light"] .cta-button--outline {
     }
 
     footer {
-        padding: 1.25rem;
-        font-size: 0.9rem;
+        padding: 0.9rem 1rem 1rem;
+        font-size: 0.82rem;
     }
 }

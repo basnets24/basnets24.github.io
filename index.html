@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Sneha Basnet | Software Engineer Portfolio" />
     <title>Sneha Basnet | Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css" />
 
@@ -18,372 +18,774 @@
     <link rel="icon" type="image/png" href="favicon.png">
 </head>
 
-<body data-theme="dark">
-    <nav id="main-nav">
-        <div class="nav-brand">
-            <div class="nav-logo">S</div>
-
-
-            <strong>Sneha Basnet</strong>
-        </div>
-        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle navigation menu">
-            <i class="fas fa-bars"></i>
-        </button>
-        <div class="nav-links" id="nav-links">
-            <a href="#about" class="nav-link">About</a>
-            <a href="#skills" class="nav-link">Skills</a>
-            <a href="#projects" class="nav-link">Projects</a>
-            <a href="#contact" class="nav-link">Contact</a>
-            <div class="nav-links__header">
-                <span class="nav-links__label">Theme</span>
-                <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch to light theme">
-                    <i class="fas fa-sun"></i>
-                </button>
+<body>
+    <nav id="main-nav" aria-label="Section navigation">
+        <div class="nav-inner">
+            <a href="#" class="nav-brand">Sneha Basnet</a>
+            <button class="mobile-menu-toggle" id="mobile-menu-toggle" type="button" aria-label="Toggle navigation menu"
+                aria-expanded="false" aria-controls="nav-links">
+                <i class="fas fa-bars" aria-hidden="true"></i>
+            </button>
+            <div class="nav-links" id="nav-links">
+                <a href="#experience" class="nav-link">Experience</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#skills" class="nav-link">Skills</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#contact" class="nav-link">Contact</a>
             </div>
         </div>
     </nav>
 
     <header>
-        <h1>Hi, I'm <span class="hero-name" data-typed-text="Sneha Basnet">Sneha Basnet</span></h1>
-        <h2>From class projects to cloud deployments, I'm learning by building.</h2>
-        <p>CS @ San Jose State University • End-to-end Developer • Frontend, Backend & Cloud Deployment</p>
-        <div class="cta-buttons">
-            <a class="cta-button cta-button--primary" href="#projects">Explore My Work</a>
-            <a class="cta-button cta-button--outline" href="Sneha_Basnet_SDE_Intern_Resume.pdf" target="_blank">Download
-                Resume</a>
-            <a class="cta-button cta-button--outline" href="#contact">Let's Connect!</a>
+        <div class="hero-content">
+            <div class="hero-main">
+                <h1 class="hero-positioning">Software Engineer building reliable, full&#8209;stack systems for the cloud.</h1>
+                <p class="hero-availability"><i class="fa-solid fa-briefcase" aria-hidden="true"></i><span>Seeking full-time SWE roles &middot; Early&nbsp;2027</span></p>
+                <div class="hero-cta-row">
+                    <div class="cta-buttons">
+                        <a class="cta-button cta-button--primary" href="#projects">View Projects <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+                        <a class="cta-button cta-button--outline" href="Sneha_Basnet_SDE_Intern_Resume.pdf" target="_blank" rel="noopener noreferrer" aria-label="Resume (PDF, opens in a new tab)">Resume</a>
+                    </div>
+                    <div class="hero-secondary-links">
+                        <a href="https://github.com/basnets24" target="_blank" rel="noopener noreferrer" class="hero-link"><i class="fa-brands fa-github" aria-hidden="true"></i> GitHub</a>
+                        <a href="https://linkedin.com/in/snehabasnet" target="_blank" rel="noopener noreferrer" class="hero-link"><i class="fa-brands fa-linkedin" aria-hidden="true"></i> LinkedIn</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-identity">
+                <img src="images/image.png" alt="" class="hero-identity__photo">
+                <div class="hero-identity__text">
+                    <p class="hero-identity__name hero-name" data-typed-text="Sneha Basnet">Sneha Basnet</p>
+                    <p class="hero-identity__line">B.S. Computer Science</p>
+                    <p class="hero-identity__line">San Jose State University</p>
+                    <p class="hero-identity__line">Graduating Dec 2026</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile-only hero: its own composition, not a reflow of the
+             desktop layout above (see .hero-mobile in layout.css) -->
+        <div class="hero-mobile">
+            <img src="images/image.png" alt="" class="hero-mobile__photo">
+            <h1 class="hero-mobile__headline">Software Engineer building reliable, full&#8209;stack systems for the cloud.</h1>
+            <p class="hero-mobile__availability">Open to full-time SWE roles<br>starting early 2027</p>
+            <div class="hero-mobile__actions">
+                <a class="hero-mobile__action" href="https://github.com/basnets24" target="_blank" rel="noopener noreferrer">
+                    <span class="hero-mobile__icon hero-mobile__icon--neutral"><i class="fa-brands fa-github" aria-hidden="true"></i></span>
+                    <span class="hero-mobile__action-label">GitHub</span>
+                </a>
+                <a class="hero-mobile__action hero-mobile__action--primary" href="Sneha_Basnet_SDE_Intern_Resume.pdf" target="_blank" rel="noopener noreferrer" aria-label="Resume (PDF, opens in a new tab)">
+                    <span class="hero-mobile__icon hero-mobile__icon--primary"><i class="fa-solid fa-file-lines" aria-hidden="true"></i></span>
+                    <span class="hero-mobile__action-label">Resume</span>
+                </a>
+                <a class="hero-mobile__action" href="https://linkedin.com/in/snehabasnet" target="_blank" rel="noopener noreferrer">
+                    <span class="hero-mobile__icon hero-mobile__icon--neutral"><i class="fa-brands fa-linkedin" aria-hidden="true"></i></span>
+                    <span class="hero-mobile__action-label">LinkedIn</span>
+                </a>
+            </div>
         </div>
     </header>
 
-    <section id="about" class="about fade-in">
-        <div class="about-container">
-            <img src="images/sneha.jpg" alt="Portrait of Sneha Basnet" class="about-photo" />
+    <section id="experience" class="fade-in">
+        <h2 class="section-title">Experience</h2>
+        <div class="experience-entry">
+            <div class="experience-entry__header">
+                <div class="experience-entry__heading">
+                    <h3 class="experience-entry__role">Cloud Software Engineer Intern</h3>
+                    <p class="experience-entry__company">Promega Corporation
+                        <span class="experience-entry__location">&middot; Santa Clara, CA</span>
+                    </p>
+                </div>
+                <span class="experience-entry__dates">May 2026 &ndash; Aug 2026</span>
+            </div>
 
-            <div class="about-text">
-                <h2 class="section-title">About Me</h2>
-                <p>
-                    I'm a Computer Science student at <strong>San Jose State University</strong>, passionate about
-                    backend systems,
-                    distributed architectures, and developer focused design.
-                </p>
+            <p class="experience-entry__context">
+                Worked on ProNect, Promega&rsquo;s cloud platform supporting lab instruments and experiment
+                workflows.
+            </p>
 
-                <p>
-                    I love learning and designing systems that are <strong>scalable, observable, and resilient</strong> from class
-                    projects to
-                    cloud deployments. I'm currently seeking a <strong>Software Engineering Internship (Summer
-                        2026)</strong>
-                    to contribute to large scale systems and learn from world class engineering teams.
-                </p>
+            <div class="experience-entry__body">
+                <div class="experience-focus-areas">
+                    <div class="experience-focus-item">
+                        <h4 class="experience-focus__label">Real-Time Result Delivery</h4>
+                        <p class="experience-focus__body">
+                            Moved result delivery from polling to Azure SignalR push notifications, cutting
+                            latency up to 40% with automatic polling fallback.
+                        </p>
+                    </div>
 
-                <p>
-                    Outside of code, I pursue <strong>photography</strong> as a creative outlet. It helps me slow down
-                    and see details
-                    from new perspectives. You can view some of my work
-                    <a href="https://vsco.co/bunsneha" target="_blank" rel="noopener noreferrer" class="link-inline">
-                        vsco.co/bunsneha
-                    </a>.
-                </p>
+                    <div class="experience-focus-item">
+                        <h4 class="experience-focus__label">Import Workflow Visibility</h4>
+                        <p class="experience-focus__body">
+                            Added live progress and failure notifications across the import pipeline, giving users
+                            visibility into every stage.
+                        </p>
+                    </div>
+                </div>
+
+                <aside class="experience-aside" aria-label="Outcome and stack">
+                    <div class="experience-metric">
+                        <span class="experience-metric__value">&darr; 30&ndash;40%</span>
+                        <span class="experience-metric__label">Result delivery latency</span>
+                    </div>
+                    <div class="experience-stack">
+                        <span class="experience-stack__label">Stack</span>
+                        <ul class="experience-stack__list">
+                            <li class="tech-chip">Azure SignalR</li>
+                            <li class="tech-chip">React</li>
+                            <li class="tech-chip">.NET</li>
+                            <li class="tech-chip">Azure Functions</li>
+                        </ul>
+                    </div>
+                </aside>
             </div>
         </div>
     </section>
 
 
+    <section id="projects" class="fade-in">
+        <h2 class="section-title">Featured Projects</h2>
 
-    <div class="section-divider"></div>
+        <div class="case-study case-study--gpe">
+            <div class="case-study__main">
+                <div class="case-study__header">
+                    <div class="case-study__heading">
+                        <h3 class="case-study__title"><a href="https://gameplayeconomy.com" target="_blank" rel="noopener noreferrer">GamePlayEconomy</a></h3>
+                        <p class="case-study__description case-study__description--desktop">Platform for game item purchases, with player profiles, catalogs, and inventory built on cloud-native infrastructure on Azure.</p>
+                        <p class="case-study__description case-study__description--mobile">Cloud-native game economy platform for player profiles, catalogs, inventory, and item purchases.</p>
+                    </div>
+                </div>
+
+                <figure class="case-study__visual" id="gpe-architecture">
+                    <div class="case-study__frame case-study__frame--flush">
+                        <svg class="arch-diagram gpe-diagram" viewBox="0 0 700 476" role="img"
+                            aria-label="Browser and mobile traffic enters through the API Gateway and is routed to five independently deployed services on Azure Kubernetes Service: Frontend, Catalog, Inventory, Trading, and Identity. Trading coordinates the purchase saga with Catalog, Inventory, and Identity through the broker, using compensating transactions on failure. Catalog, Inventory, Trading, and Identity each own their data in Azure Cosmos DB via the MongoDB API. Services exchange domain events and commands through MassTransit over Azure Service Bus. OpenTelemetry telemetry flows to Jaeger and Prometheus with Grafana; GitHub Actions builds Docker images and deploys independently with Helm.">
+                            <defs>
+                                <marker id="gpeArrow" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+                                    <path d="M0,0 L8,4 L0,8 Z" class="arch-arrowhead"></path>
+                                </marker>
+                                <marker id="gpeArrowMsg" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+                                    <path d="M0,0 L8,4 L0,8 Z" class="arch-arrowhead--msg"></path>
+                                </marker>
+                                <marker id="gpeArrowSaga" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+                                    <path d="M0,0 L8,4 L0,8 Z" class="arch-arrowhead--saga"></path>
+                                </marker>
+                                <marker id="gpeArrowFlow" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+                                    <path d="M0,0 L8,4 L0,8 Z" class="arch-arrowhead--flow"></path>
+                                </marker>
+                                <marker id="gpeArrowExt" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+                                    <path d="M0,0 L8,4 L0,8 Z" class="arch-arrowhead--ext"></path>
+                                </marker>
+                            </defs>
+                        
+                            <!-- Client -->
+                            <rect class="arch-node" x="240" y="8" width="220" height="32" rx="16"></rect>
+                            <text x="350" y="29" text-anchor="middle" class="arch-title">Browser / Mobile</text>
+                            <line class="arch-edge" x1="350" y1="40" x2="350" y2="58" marker-end="url(#gpeArrow)"></line>
+                        
+                            <!-- Legend -->
+                            <line class="arch-edge" x1="484" y1="24" x2="498" y2="24"></line>
+                            <text x="503" y="27" class="arch-legend">HTTP</text>
+                            <line class="arch-edge--msg" x1="536" y1="24" x2="550" y2="24"></line>
+                            <text x="555" y="27" class="arch-legend">Messaging</text>
+                            <line class="arch-edge--saga" x1="616" y1="24" x2="630" y2="24"></line>
+                            <text x="635" y="27" class="arch-legend">Saga</text>
+                        
+                            <!-- Ingress / proxy -->
+                            <rect class="arch-node" x="200" y="60" width="300" height="34" rx="10"></rect>
+                            <text x="350" y="82" text-anchor="middle" class="arch-title">API Gateway</text>
+                        
+                            <!-- Fan-out to services -->
+                            <line class="arch-edge" x1="350" y1="94" x2="350" y2="128"></line>
+                            <line class="arch-edge" x1="86" y1="128" x2="614" y2="128"></line>
+                            <line class="arch-edge" x1="86" y1="128" x2="86" y2="145" marker-end="url(#gpeArrow)"></line>
+                            <line class="arch-edge" x1="218" y1="128" x2="218" y2="145" marker-end="url(#gpeArrow)"></line>
+                            <line class="arch-edge" x1="350" y1="128" x2="350" y2="145" marker-end="url(#gpeArrow)"></line>
+                            <line class="arch-edge" x1="482" y1="128" x2="482" y2="145" marker-end="url(#gpeArrow)"></line>
+                            <line class="arch-edge" x1="614" y1="128" x2="614" y2="145" marker-end="url(#gpeArrow)"></line>
+                        
+                            <!-- Platform boundary -->
+                            <rect class="arch-boundary" x="12" y="114" width="676" height="150" rx="14"></rect>
+                            <rect class="arch-boundary-tag" x="24" y="104" width="266" height="20" rx="4"></rect>
+                            <image href="images/icon-kubernetes.svg" x="32" y="107" width="14" height="14" class="arch-icon"></image>
+                            <text x="52" y="118" class="arch-boundary-label">AZURE KUBERNETES SERVICE (AKS)</text>
+                        
+                            <!-- Services -->
+                            <rect class="arch-node" x="24" y="146" width="124" height="74" rx="10"></rect>
+                            <text x="86" y="170" text-anchor="middle" class="arch-title">Frontend</text>
+                            <text x="86" y="191" text-anchor="middle" class="arch-sub">React SPA</text>
+                            <rect class="arch-node" x="156" y="146" width="124" height="74" rx="10"></rect>
+                            <text x="218" y="170" text-anchor="middle" class="arch-title">Catalog</text>
+                            <text x="218" y="191" text-anchor="middle" class="arch-sub">Publishes events</text>
+                            <rect class="arch-node" x="288" y="146" width="124" height="74" rx="10"></rect>
+                            <text x="350" y="170" text-anchor="middle" class="arch-title">Inventory</text>
+                            <text x="350" y="191" text-anchor="middle" class="arch-sub">Consumes events</text>
+                            <rect class="arch-node arch-node--hot" x="420" y="146" width="124" height="74" rx="10"></rect>
+                            <text x="482" y="170" text-anchor="middle" class="arch-title arch-title--hot">Trading</text>
+                            <text x="482" y="187" text-anchor="middle" class="arch-sub arch-sub--hot">Saga orchestration</text>
+                            <text x="482" y="199" text-anchor="middle" class="arch-sub arch-sub--hot">Compensating</text>
+                            <text x="482" y="211" text-anchor="middle" class="arch-sub arch-sub--hot">transactions</text>
+                            <rect class="arch-node" x="552" y="146" width="124" height="74" rx="10"></rect>
+                            <text x="614" y="170" text-anchor="middle" class="arch-title">Identity</text>
+                            <text x="614" y="191" text-anchor="middle" class="arch-sub">Auth &amp; accounts</text>
+                        
+                            <!-- Coordination rail -->
+                            <path class="arch-edge--saga" d="M506,223 V240 H242 V223" marker-start="url(#gpeArrowSaga)" marker-end="url(#gpeArrowSaga)"></path>
+                            <path class="arch-edge--saga" d="M374,240 V223" marker-end="url(#gpeArrowSaga)"></path>
+                            <path class="arch-edge--saga" d="M506,240 H638 V223" marker-end="url(#gpeArrowSaga)"></path>
+                            <circle class="arch-saga-dot" cx="506" cy="240" r="3"></circle>
+                            <rect class="arch-label-tag" x="511" y="245" width="102" height="14" rx="3"></rect>
+                            <text x="514" y="255" class="arch-saga-label">Saga coordination</text>
+                        
+                            <!-- Data annotation -->
+                            <image href="images/icon-cosmosdb.svg" x="16" y="287" width="16" height="16" class="arch-icon"></image>
+                            <text x="38" y="293" class="arch-data-note arch-data-note--strong">Cosmos DB (Mongo API)</text>
+                            <text x="38" y="305" class="arch-data-note">Service-owned data</text>
+                            <line class="arch-edge--data" x1="218" y1="220" x2="218" y2="280"></line>
+                            <rect class="arch-data-node" x="172" y="280" width="92" height="30" rx="7"></rect>
+                            <g class="arch-db-glyph" transform="translate(180,289)"><ellipse cx="5" cy="2" rx="5" ry="2"></ellipse><path d="M0,2 V10 A5,2 0 0 0 10,10 V2"></path></g>
+                            <text x="194" y="299" class="arch-data-text">Catalog DB</text>
+                            <line class="arch-edge--data" x1="350" y1="220" x2="350" y2="280"></line>
+                            <rect class="arch-data-node" x="304" y="280" width="92" height="30" rx="7"></rect>
+                            <g class="arch-db-glyph" transform="translate(312,289)"><ellipse cx="5" cy="2" rx="5" ry="2"></ellipse><path d="M0,2 V10 A5,2 0 0 0 10,10 V2"></path></g>
+                            <text x="326" y="299" class="arch-data-text">Inventory DB</text>
+                            <line class="arch-edge--data" x1="482" y1="220" x2="482" y2="280"></line>
+                            <rect class="arch-data-node" x="436" y="280" width="92" height="30" rx="7"></rect>
+                            <g class="arch-db-glyph" transform="translate(444,289)"><ellipse cx="5" cy="2" rx="5" ry="2"></ellipse><path d="M0,2 V10 A5,2 0 0 0 10,10 V2"></path></g>
+                            <text x="458" y="299" class="arch-data-text">Trading DB</text>
+                            <line class="arch-edge--data" x1="614" y1="220" x2="614" y2="280"></line>
+                            <rect class="arch-data-node" x="568" y="280" width="92" height="30" rx="7"></rect>
+                            <g class="arch-db-glyph" transform="translate(576,289)"><ellipse cx="5" cy="2" rx="5" ry="2"></ellipse><path d="M0,2 V10 A5,2 0 0 0 10,10 V2"></path></g>
+                            <text x="590" y="299" class="arch-data-text">Identity DB</text>
+                        
+                            <!-- Messaging -->
+                            <line class="arch-edge--msg" x1="164" y1="220" x2="164" y2="323" marker-start="url(#gpeArrowMsg)" marker-end="url(#gpeArrowMsg)"></line>
+                            <line class="arch-edge--msg" x1="296" y1="220" x2="296" y2="323" marker-start="url(#gpeArrowMsg)" marker-end="url(#gpeArrowMsg)"></line>
+                            <line class="arch-edge--msg" x1="428" y1="220" x2="428" y2="323" marker-start="url(#gpeArrowMsg)" marker-end="url(#gpeArrowMsg)"></line>
+                            <line class="arch-edge--msg" x1="560" y1="220" x2="560" y2="323" marker-start="url(#gpeArrowMsg)" marker-end="url(#gpeArrowMsg)"></line>
+                            <rect class="arch-node arch-node--broker" x="150" y="324" width="538" height="50" rx="11"></rect>
+                            <image href="images/icon-azure-service-bus.svg" x="279" y="333" width="18" height="18" class="arch-icon"></image>
+                            <text x="419" y="346" text-anchor="middle" class="arch-title arch-title--lg arch-title--broker">Message Broker / MassTransit</text>
+                            <image href="images/icon-masstransit.svg" x="541" y="333" width="18" height="18" class="arch-icon arch-icon--mono"></image>
+                            <text x="419" y="363" text-anchor="middle" class="arch-sub arch-sub--broker">Azure Service Bus</text>
+                        
+                            <!-- OBSERVABILITY row -->
+                            <line class="arch-rule" x1="12" y1="388" x2="688" y2="388"></line>
+                            <text x="24" y="414" class="arch-panel-header">OBSERVABILITY</text>
+                            <rect class="arch-chip arch-chip--hot" x="120" y="399" width="118" height="22" rx="6"></rect>
+                            <image href="images/icon-opentelemetry.svg" x="127" y="403" width="14" height="14" class="arch-icon"></image>
+                            <text x="146" y="414" class="arch-chip-text arch-chip-text--hot">OpenTelemetry</text>
+                            <line class="arch-flow-edge" x1="242" y1="410" x2="258" y2="410" marker-end="url(#gpeArrowFlow)"></line>
+                            <rect class="arch-chip" x="262" y="399" width="72" height="22" rx="6"></rect>
+                            <image href="images/icon-jaeger.svg" x="269" y="403" width="14" height="14" class="arch-icon"></image>
+                            <text x="288" y="414" class="arch-chip-text">Jaeger</text>
+                            <rect class="arch-chip" x="340" y="399" width="152" height="22" rx="6"></rect>
+                            <image href="images/icon-prometheus.svg" x="347" y="403" width="14" height="14" class="arch-icon"></image>
+                            <text x="366" y="414" class="arch-chip-text">Prometheus / Grafana</text>
+                        
+                            <!-- CI / CD row -->
+                            <line class="arch-rule" x1="12" y1="430" x2="688" y2="430"></line>
+                            <text x="24" y="456" class="arch-panel-header">CI / CD</text>
+                            <rect class="arch-chip" x="120" y="441" width="112" height="22" rx="6"></rect>
+                            <image href="images/icon-github-actions.svg" x="127" y="445" width="14" height="14" class="arch-icon"></image>
+                            <text x="146" y="456" class="arch-chip-text">GitHub Actions</text>
+                            <line class="arch-flow-edge" x1="236" y1="452" x2="252" y2="452" marker-end="url(#gpeArrowFlow)"></line>
+                            <rect class="arch-chip" x="256" y="441" width="108" height="22" rx="6"></rect>
+                            <image href="images/svg/docker.svg" x="263" y="445" width="14" height="14" class="arch-icon"></image>
+                            <text x="282" y="456" class="arch-chip-text">Docker image</text>
+                            <line class="arch-flow-edge" x1="368" y1="452" x2="384" y2="452" marker-end="url(#gpeArrowFlow)"></line>
+                            <rect class="arch-chip" x="388" y="441" width="104" height="22" rx="6"></rect>
+                            <image href="images/icon-helm.svg" x="395" y="445" width="14" height="14" class="arch-icon"></image>
+                            <text x="414" y="456" class="arch-chip-text">Helm release</text>
+                            <line class="arch-flow-edge" x1="496" y1="452" x2="512" y2="452" marker-end="url(#gpeArrowFlow)"></line>
+                            <rect class="arch-chip arch-chip--hot" x="516" y="441" width="132" height="22" rx="6"></rect>
+                            <image href="images/icon-aks.svg" x="523" y="445" width="14" height="14" class="arch-icon"></image>
+                            <text x="542" y="456" class="arch-chip-text arch-chip-text--hot">AKS rolling update</text>
+                        </svg>
+                    </div>
+                </figure>
+            </div>
+
+            <div class="case-study__story">
+                <div class="case-study__classic-summary">
+                    <p class="case-study__label">Context</p>
+                    <p class="case-study__context">Each purchase spans independently deployed services that must stay consistent through failures.</p>
+
+                    <p class="case-study__label">Approach</p>
+                    <div class="case-study__highlights">
+                        <div class="case-study__highlight">
+                            <h4>Distributed purchase workflow</h4>
+                            <p>Saga coordinates purchase flow with compensating actions.</p>
+                        </div>
+                        <div class="case-study__highlight">
+                            <h4>Event-driven messaging</h4>
+                            <p>Async messaging decouples service dependencies.</p>
+                        </div>
+                        <div class="case-study__highlight">
+                            <h4>Distributed tracing</h4>
+                            <p>OpenTelemetry traces requests and failures across services.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mobile-only: replaces the Context/Approach essay above with
+                     a problem statement + three scannable technical rows -->
+                <div class="case-study__mobile-summary">
+                    <p class="case-study__mobile-problem">One purchase crosses multiple services, so failures need to be recovered without leaving partial state.</p>
+
+                    <p class="case-study__label">How it works</p>
+                    <div class="case-study__mobile-rows">
+                        <div class="case-study__mobile-row">
+                            <span class="case-study__mobile-row-term">Saga</span>
+                            <span class="case-study__mobile-row-desc">Purchase coordination + compensation</span>
+                        </div>
+                        <div class="case-study__mobile-row">
+                            <span class="case-study__mobile-row-term">Messaging</span>
+                            <span class="case-study__mobile-row-desc">Async communication between services</span>
+                        </div>
+                        <div class="case-study__mobile-row">
+                            <span class="case-study__mobile-row-term">Tracing</span>
+                            <span class="case-study__mobile-row-desc">Cross-service request visibility</span>
+                        </div>
+                    </div>
+                </div>
+
+                <p class="case-study__label">Outcome</p>
+                <p class="case-study__outcome">Purchases stay consistent under partial failure, with full request tracing.</p>
+
+                <div class="project-links case-study__actions">
+                    <a class="project-link project-link--primary" href="https://gameplayeconomy.com"
+                        target="_blank" rel="noopener noreferrer">
+                        <i class="fa-solid fa-globe"></i>
+                        <span>Visit Website</span>
+                    </a>
+                    <a class="project-link" href="https://github.com/dotnetmicroservice001" target="_blank"
+                        rel="noopener noreferrer">
+                        <i class="fa-brands fa-github"></i>
+                        <span>View on GitHub</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="case-study case-study--product">
+            <div class="case-study__main">
+                <div class="case-study__header">
+                    <div class="case-study__heading">
+                        <h3 class="case-study__title"><a href="https://spoontab.com" target="_blank" rel="noopener noreferrer">SpoonTab</a></h3>
+                        <p class="case-study__description case-study__description--desktop">Multi-tenant restaurant operations platform for ordering, staff workflows, and customer interactions.</p>
+                        <p class="case-study__description case-study__description--mobile">Multi-tenant platform for restaurant ordering, staff workflows, and payments.</p>
+                    </div>
+                </div>
+
+                <figure class="case-study__visual" id="spoontab-architecture">
+                    <div class="case-study__frame case-study__frame--flush">
+                        <svg class="arch-diagram spt-diagram" viewBox="0 0 700 476" role="img"
+                            aria-label="Staff and diner browsers reach SpoonTab through Caddy, a TLS reverse proxy on a single VM running Docker Compose alongside RabbitMQ, which routes to a React frontend and four ASP.NET Core services: Identity, Catalog, Order, and Payment. Order runs the order saga, which reserves inventory in Catalog through MassTransit over RabbitMQ, and hosts a SignalR floor hub. Payment creates Stripe PaymentIntents outside the saga. All services share one external PostgreSQL database on Supabase with a schema per service. Every request is tenant-scoped: restaurant and location headers flow through tenant middleware, MassTransit filters, and database query filters. Service images are pulled from GHCR into Docker Compose behind Caddy on a single VM.">
+                            <defs>
+                                <marker id="sptArrow" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+                                    <path d="M0,0 L8,4 L0,8 Z" class="arch-arrowhead"></path>
+                                </marker>
+                                <marker id="sptArrowMsg" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+                                    <path d="M0,0 L8,4 L0,8 Z" class="arch-arrowhead--msg"></path>
+                                </marker>
+                                <marker id="sptArrowSaga" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+                                    <path d="M0,0 L8,4 L0,8 Z" class="arch-arrowhead--saga"></path>
+                                </marker>
+                                <marker id="sptArrowFlow" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+                                    <path d="M0,0 L8,4 L0,8 Z" class="arch-arrowhead--flow"></path>
+                                </marker>
+                                <marker id="sptArrowExt" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+                                    <path d="M0,0 L8,4 L0,8 Z" class="arch-arrowhead--ext"></path>
+                                </marker>
+                            </defs>
+                        
+                            <!-- Client -->
+                            <rect class="arch-node" x="245" y="8" width="210" height="32" rx="16"></rect>
+                            <text x="350" y="29" text-anchor="middle" class="arch-title">Staff &amp; Diner Browsers</text>
+                            <line class="arch-edge" x1="350" y1="40" x2="350" y2="58" marker-end="url(#sptArrow)"></line>
+                        
+                            <!-- Legend -->
+                            <line class="arch-edge--msg" x1="16" y1="24" x2="30" y2="24"></line>
+                            <text x="35" y="27" class="arch-legend">Messaging</text>
+                            <line class="arch-edge--saga" x1="96" y1="24" x2="110" y2="24"></line>
+                            <text x="115" y="27" class="arch-legend">Saga</text>
+                            <line class="arch-edge--ext" x1="148" y1="24" x2="162" y2="24"></line>
+                            <text x="167" y="27" class="arch-legend">External</text>
+                        
+                            <!-- Ingress / proxy -->
+                            <rect class="arch-node" x="200" y="60" width="300" height="34" rx="10"></rect>
+                            <text x="350" y="82" text-anchor="middle" class="arch-title">Caddy &middot; TLS reverse proxy</text>
+                        
+                            <!-- Fan-out to services -->
+                            <line class="arch-edge" x1="350" y1="94" x2="350" y2="128"></line>
+                            <line class="arch-edge" x1="86" y1="128" x2="614" y2="128"></line>
+                            <line class="arch-edge" x1="86" y1="128" x2="86" y2="145" marker-end="url(#sptArrow)"></line>
+                            <line class="arch-edge" x1="218" y1="128" x2="218" y2="145" marker-end="url(#sptArrow)"></line>
+                            <line class="arch-edge" x1="350" y1="128" x2="350" y2="145" marker-end="url(#sptArrow)"></line>
+                            <line class="arch-edge" x1="482" y1="128" x2="482" y2="145" marker-end="url(#sptArrow)"></line>
+                            <line class="arch-edge" x1="614" y1="128" x2="614" y2="145" marker-end="url(#sptArrow)"></line>
+                        
+                            <!-- Stripe (external) -->
+                            <rect class="arch-node arch-node--external" x="566" y="60" width="122" height="34" rx="10"></rect>
+                            <image href="images/icon-stripe.svg" x="592" y="69" width="16" height="16" class="arch-icon arch-icon--mono"></image>
+                            <text x="614" y="82" class="arch-title">Stripe</text>
+                            <line class="arch-edge--ext" x1="650" y1="95" x2="650" y2="145" marker-start="url(#sptArrowExt)" marker-end="url(#sptArrowExt)"></line>
+                        
+                            <!-- Platform boundary -->
+                            <rect class="arch-boundary" x="12" y="114" width="676" height="208" rx="14"></rect>
+                            <rect class="arch-boundary-tag" x="24" y="104" width="236" height="20" rx="4"></rect>
+                            <image href="images/svg/docker.svg" x="32" y="107" width="14" height="14" class="arch-icon"></image>
+                            <text x="52" y="118" class="arch-boundary-label">DOCKER COMPOSE &middot; SINGLE VM</text>
+                        
+                            <!-- Services -->
+                            <rect class="arch-node" x="24" y="146" width="124" height="74" rx="10"></rect>
+                            <text x="86" y="170" text-anchor="middle" class="arch-title">Frontend</text>
+                            <text x="86" y="191" text-anchor="middle" class="arch-sub">React 19 / TypeScript</text>
+                            <rect class="arch-node" x="156" y="146" width="124" height="74" rx="10"></rect>
+                            <text x="218" y="170" text-anchor="middle" class="arch-title">Identity</text>
+                            <text x="218" y="191" text-anchor="middle" class="arch-sub">OAuth2 / OIDC</text>
+                            <rect class="arch-node" x="288" y="146" width="124" height="74" rx="10"></rect>
+                            <text x="350" y="170" text-anchor="middle" class="arch-title">Catalog</text>
+                            <text x="350" y="191" text-anchor="middle" class="arch-sub">Menu &amp; inventory</text>
+                            <rect class="arch-node arch-node--hot" x="420" y="146" width="124" height="74" rx="10"></rect>
+                            <text x="482" y="170" text-anchor="middle" class="arch-title arch-title--hot">Order</text>
+                            <text x="482" y="190" text-anchor="middle" class="arch-sub arch-sub--hot">Order saga</text>
+                            <text x="482" y="204" text-anchor="middle" class="arch-sub arch-sub--hot">SignalR floor hub</text>
+                            <rect class="arch-node" x="552" y="146" width="124" height="74" rx="10"></rect>
+                            <text x="614" y="170" text-anchor="middle" class="arch-title">Payment</text>
+                            <text x="614" y="191" text-anchor="middle" class="arch-sub">Stripe PaymentIntent</text>
+                        
+                            <!-- Coordination rail -->
+                            <path class="arch-edge--saga" d="M506,223 V240 H374 V223" marker-start="url(#sptArrowSaga)" marker-end="url(#sptArrowSaga)"></path>
+                            <circle class="arch-saga-dot" cx="506" cy="240" r="3"></circle>
+                            <rect class="arch-label-tag" x="511" y="245" width="148" height="14" rx="3"></rect>
+                            <text x="514" y="255" class="arch-saga-label">Saga <tspan class="arch-saga-label--soft">&middot; inventory reservation</tspan></text>
+                        
+                            <!-- Data annotation -->
+                            <image href="images/icon-postgresql.svg" x="16" y="351" width="16" height="16" class="arch-icon"></image>
+                            <text x="38" y="357" class="arch-data-note arch-data-note--strong">PostgreSQL (Supabase)</text>
+                            <text x="38" y="369" class="arch-data-note">Schema per service</text>
+                            <line class="arch-data-bus" x1="150" y1="359" x2="652" y2="359"></line>
+                            <rect class="arch-data-node" x="172" y="344" width="92" height="30" rx="7"></rect>
+                            <g class="arch-db-glyph" transform="translate(180,353)"><ellipse cx="5" cy="2" rx="5" ry="2"></ellipse><path d="M0,2 V10 A5,2 0 0 0 10,10 V2"></path></g>
+                            <text x="194" y="363" class="arch-data-text">identity</text>
+                            <rect class="arch-data-node" x="304" y="344" width="92" height="30" rx="7"></rect>
+                            <g class="arch-db-glyph" transform="translate(312,353)"><ellipse cx="5" cy="2" rx="5" ry="2"></ellipse><path d="M0,2 V10 A5,2 0 0 0 10,10 V2"></path></g>
+                            <text x="326" y="363" class="arch-data-text">catalog</text>
+                            <rect class="arch-data-node" x="436" y="344" width="92" height="30" rx="7"></rect>
+                            <g class="arch-db-glyph" transform="translate(444,353)"><ellipse cx="5" cy="2" rx="5" ry="2"></ellipse><path d="M0,2 V10 A5,2 0 0 0 10,10 V2"></path></g>
+                            <text x="458" y="363" class="arch-data-text">order</text>
+                            <rect class="arch-data-node" x="568" y="344" width="92" height="30" rx="7"></rect>
+                            <g class="arch-db-glyph" transform="translate(576,353)"><ellipse cx="5" cy="2" rx="5" ry="2"></ellipse><path d="M0,2 V10 A5,2 0 0 0 10,10 V2"></path></g>
+                            <text x="590" y="363" class="arch-data-text">payment</text>
+                        
+                            <!-- Messaging -->
+                            <line class="arch-edge--msg" x1="164" y1="220" x2="164" y2="265" marker-start="url(#sptArrowMsg)" marker-end="url(#sptArrowMsg)"></line>
+                            <line class="arch-edge--msg" x1="296" y1="220" x2="296" y2="265" marker-start="url(#sptArrowMsg)" marker-end="url(#sptArrowMsg)"></line>
+                            <line class="arch-edge--msg" x1="428" y1="220" x2="428" y2="265" marker-start="url(#sptArrowMsg)" marker-end="url(#sptArrowMsg)"></line>
+                            <line class="arch-edge--msg" x1="560" y1="220" x2="560" y2="265" marker-start="url(#sptArrowMsg)" marker-end="url(#sptArrowMsg)"></line>
+                            <rect class="arch-node arch-node--broker" x="150" y="266" width="538" height="46" rx="11"></rect>
+                            <image href="images/icon-rabbitmq.svg" x="279" y="273" width="18" height="18" class="arch-icon"></image>
+                            <text x="419" y="286" text-anchor="middle" class="arch-title arch-title--lg arch-title--broker">Message Broker / MassTransit</text>
+                            <image href="images/icon-masstransit.svg" x="541" y="273" width="18" height="18" class="arch-icon arch-icon--mono"></image>
+                            <text x="419" y="303" text-anchor="middle" class="arch-sub arch-sub--broker">RabbitMQ</text>
+                        
+                            <!-- MULTI-TENANCY row -->
+                            <line class="arch-rule" x1="12" y1="388" x2="688" y2="388"></line>
+                            <text x="24" y="414" class="arch-panel-header">MULTI-TENANCY</text>
+                            <rect class="arch-chip arch-chip--hot" x="120" y="399" width="98" height="22" rx="6"></rect>
+                            <text x="169" y="414" text-anchor="middle" class="arch-chip-text arch-chip-text--hot">Tenant headers</text>
+                            <line class="arch-flow-edge" x1="222" y1="410" x2="238" y2="410" marker-end="url(#sptArrowFlow)"></line>
+                            <rect class="arch-chip" x="242" y="399" width="112" height="22" rx="6"></rect>
+                            <text x="298" y="414" text-anchor="middle" class="arch-chip-text">TenantMiddleware</text>
+                            <line class="arch-flow-edge" x1="358" y1="410" x2="374" y2="410" marker-end="url(#sptArrowFlow)"></line>
+                            <rect class="arch-chip" x="378" y="399" width="122" height="22" rx="6"></rect>
+                            <text x="439" y="414" text-anchor="middle" class="arch-chip-text">MassTransit filters</text>
+                            <line class="arch-flow-edge" x1="504" y1="410" x2="520" y2="410" marker-end="url(#sptArrowFlow)"></line>
+                            <rect class="arch-chip" x="524" y="399" width="88" height="22" rx="6"></rect>
+                            <text x="568" y="414" text-anchor="middle" class="arch-chip-text">Query filters</text>
+                        
+                            <!-- DELIVERY row -->
+                            <line class="arch-rule" x1="12" y1="430" x2="688" y2="430"></line>
+                            <text x="24" y="456" class="arch-panel-header">DELIVERY</text>
+                            <rect class="arch-chip" x="120" y="441" width="104" height="22" rx="6"></rect>
+                            <image href="images/svg/github.svg" x="127" y="445" width="14" height="14" class="arch-icon"></image>
+                            <text x="146" y="456" class="arch-chip-text">GHCR image</text>
+                            <line class="arch-flow-edge" x1="228" y1="452" x2="244" y2="452" marker-end="url(#sptArrowFlow)"></line>
+                            <rect class="arch-chip" x="248" y="441" width="128" height="22" rx="6"></rect>
+                            <image href="images/svg/docker.svg" x="255" y="445" width="14" height="14" class="arch-icon"></image>
+                            <text x="274" y="456" class="arch-chip-text">Docker Compose</text>
+                            <line class="arch-flow-edge" x1="380" y1="452" x2="396" y2="452" marker-end="url(#sptArrowFlow)"></line>
+                            <rect class="arch-chip arch-chip--hot" x="400" y="441" width="110" height="22" rx="6"></rect>
+                            <text x="455" y="456" text-anchor="middle" class="arch-chip-text arch-chip-text--hot">Caddy on one VM</text>
+                        </svg>
+                    </div>
+                </figure>
+            </div>
+
+            <div class="case-study__story">
+                <div class="case-study__classic-summary">
+                    <p class="case-study__label">Context</p>
+                    <p class="case-study__context">Every request has to say which restaurant it&rsquo;s for, and so does every message it turns into.</p>
+
+                    <p class="case-study__label">Approach</p>
+                    <div class="case-study__highlights">
+                        <div class="case-study__highlight">
+                            <h4>Tenant resolution</h4>
+                            <p>Middleware reads it off every request.</p>
+                        </div>
+                        <div class="case-study__highlight">
+                            <h4>Message-bus propagation</h4>
+                            <p>MassTransit filters carry it into the saga.</p>
+                        </div>
+                        <div class="case-study__highlight">
+                            <h4>Data-layer isolation</h4>
+                            <p>Query filters scope every read to it.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mobile-only: replaces the Context/Approach essay above with
+                     a problem statement + three scannable technical rows -->
+                <div class="case-study__mobile-summary">
+                    <p class="case-study__mobile-problem">Every request has to say which restaurant it&rsquo;s for, and so does every message it turns into.</p>
+
+                    <p class="case-study__label">How it works</p>
+                    <div class="case-study__mobile-rows">
+                        <div class="case-study__mobile-row">
+                            <span class="case-study__mobile-row-term">Tenancy</span>
+                            <span class="case-study__mobile-row-desc">Resolved by middleware on every request</span>
+                        </div>
+                        <div class="case-study__mobile-row">
+                            <span class="case-study__mobile-row-term">Messaging</span>
+                            <span class="case-study__mobile-row-desc">MassTransit filters carry it into the saga</span>
+                        </div>
+                        <div class="case-study__mobile-row">
+                            <span class="case-study__mobile-row-term">Data isolation</span>
+                            <span class="case-study__mobile-row-desc">Query filters scope every read</span>
+                        </div>
+                    </div>
+                </div>
+
+                <p class="case-study__label">Outcome</p>
+                <p class="case-study__outcome">Restaurants stay isolated on shared infrastructure, from HTTP request to database row.</p>
+
+                <div class="project-links case-study__actions">
+                    <a class="project-link project-link--primary" href="https://spoontab.com" target="_blank"
+                        rel="noopener noreferrer">
+                        <i class="fa-solid fa-globe"></i>
+                        <span>Visit Website</span>
+                    </a>
+                    <a class="project-link" href="https://github.com/basnets24/restaurant.pos" target="_blank"
+                        rel="noopener noreferrer">
+                        <i class="fa-brands fa-github"></i>
+                        <span>View on GitHub</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="other-projects" class="fade-in">
+        <div class="other-projects__header">
+            <h2 class="section-title">Other Projects</h2>
+            <a class="other-projects__view-all" href="https://github.com/basnets24" target="_blank"
+                rel="noopener noreferrer">View all on GitHub <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+
+        <div class="other-projects-grid">
+            <article class="other-project">
+                <h3 class="other-project__title">Git Groceries</h3>
+                <p class="other-project__description">Full-stack grocery delivery platform for ordering, payments,
+                    delivery tracking, and admin operations.</p>
+                <div class="other-project__tags">
+                    <span class="tech-chip">React</span>
+                    <span class="tech-chip">Flask</span>
+                    <span class="tech-chip">MySQL</span>
+                    <span class="tech-chip">Stripe</span>
+                </div>
+                <p class="other-project__detail">Integrated Stripe checkout with Google Maps-based delivery
+                    routing and tracking.</p>
+                <a class="other-project__link" href="https://github.com/basnets24/git-groceries" target="_blank"
+                    rel="noopener noreferrer">View project <i class="fa-solid fa-arrow-right"></i></a>
+            </article>
+
+            <article class="other-project">
+                <h3 class="other-project__title">Diabetes Risk Pipeline</h3>
+                <p class="other-project__description">Distributed ML pipeline for diabetes risk screening across
+                    100,000 patient records.</p>
+                <div class="other-project__tags">
+                    <span class="tech-chip">PySpark</span>
+                    <span class="tech-chip">GCP Dataproc</span>
+                    <span class="tech-chip">Python</span>
+                    <span class="tech-chip">MLlib</span>
+                </div>
+                <p class="other-project__detail">Built a six-stage PySpark pipeline for feature engineering, model
+                    training, evaluation, and risk scoring.</p>
+                <a class="other-project__link" href="https://github.com/basnets24/diabetes-risk-pipeline"
+                    target="_blank" rel="noopener noreferrer">View project <i class="fa-solid fa-arrow-right"></i></a>
+            </article>
+
+            <article class="other-project">
+                <h3 class="other-project__title">CampusConnect</h3>
+                <p class="other-project__description">JavaFX scheduling application for faculty-student office
+                    hours.</p>
+                <div class="other-project__tags">
+                    <span class="tech-chip">Java</span>
+                    <span class="tech-chip">JavaFX</span>
+                    <span class="tech-chip">MySQL</span>
+                </div>
+                <p class="other-project__detail">Built MVC-based scheduling and validation workflows to prevent
+                    conflicting appointments.</p>
+                <a class="other-project__link" href="https://github.com/basnets24/CampusConnect" target="_blank"
+                    rel="noopener noreferrer">View project <i class="fa-solid fa-arrow-right"></i></a>
+            </article>
+        </div>
+
+        <!-- Mobile-only: a swipeable row of compact cards instead of the
+             desktop grid's taller, more detailed blocks -->
+        <div class="other-projects-carousel" tabindex="0" role="region" aria-label="Other projects, swipe to see more">
+            <article class="other-project-card">
+                <h3 class="other-project-card__title">Git Groceries</h3>
+                <p class="other-project-card__description">Grocery delivery platform with payments and delivery tracking.</p>
+                <p class="other-project-card__tech">React &middot; Flask &middot; Stripe</p>
+                <a class="other-project-card__link" href="https://github.com/basnets24/git-groceries" target="_blank"
+                    rel="noopener noreferrer">View project <i class="fa-solid fa-arrow-right"></i></a>
+            </article>
+
+            <article class="other-project-card">
+                <h3 class="other-project-card__title">Diabetes Risk Pipeline</h3>
+                <p class="other-project-card__description">Distributed ML pipeline across 100K patient records.</p>
+                <p class="other-project-card__tech">PySpark &middot; GCP &middot; MLlib</p>
+                <a class="other-project-card__link" href="https://github.com/basnets24/diabetes-risk-pipeline"
+                    target="_blank" rel="noopener noreferrer">View project <i class="fa-solid fa-arrow-right"></i></a>
+            </article>
+
+            <article class="other-project-card">
+                <h3 class="other-project-card__title">CampusConnect</h3>
+                <p class="other-project-card__description">Faculty-student office hour scheduling app.</p>
+                <p class="other-project-card__tech">Java &middot; JavaFX &middot; MySQL</p>
+                <a class="other-project-card__link" href="https://github.com/basnets24/CampusConnect" target="_blank"
+                    rel="noopener noreferrer">View project <i class="fa-solid fa-arrow-right"></i></a>
+            </article>
+        </div>
+    </section>
+
 
     <section id="skills" class="fade-in">
         <h2 class="section-title">Technical Skills</h2>
         <div class="skills">
-            <div class="skill-category">
-                <h3><i class="fas fa-code"></i> Languages & Frameworks</h3>
-                <div class="skill-badges">
-                    <span class="skill-badge"><i class="devicon-java-plain colored"
-                            aria-hidden="true"></i><span>Java</span></span>
-                    <span class="skill-badge"><i class="devicon-csharp-plain colored"
-                            aria-hidden="true"></i><span>C#</span></span>
-                    <span class="skill-badge"><i class="devicon-cplusplus-plain colored"
-                            aria-hidden="true"></i><span>C++</span></span>
-                    <span class="skill-badge"><i class="devicon-javascript-plain colored"
-                            aria-hidden="true"></i><span>JavaScript</span></span>
-                    <span class="skill-badge"><i class="devicon-dotnetcore-plain colored"
-                            aria-hidden="true"></i><span>.NET</span></span>
-                    <span class="skill-badge"><i class="devicon-react-original colored"
-                            aria-hidden="true"></i><span>React</span></span>
-                </div>
+            <div class="skill-group">
+                <h3 class="skill-group__title"><span>Languages &amp; Frameworks</span></h3>
+                <ul class="skill-list">
+                    <li class="skill-item"><i class="devicon-csharp-plain colored" aria-hidden="true"></i><span>C#</span></li>
+                    <li class="skill-item"><i class="devicon-dotnetcore-plain colored" aria-hidden="true"></i><span>.NET</span></li>
+                    <li class="skill-item"><i class="devicon-react-original colored" aria-hidden="true"></i><span>React</span></li>
+                    <li class="skill-item"><i class="devicon-javascript-plain colored" aria-hidden="true"></i><span>TypeScript</span></li>
+                    <li class="skill-item"><i class="devicon-java-plain colored" aria-hidden="true"></i><span>Java</span></li>
+                    <li class="skill-item"><i class="devicon-cplusplus-plain colored" aria-hidden="true"></i><span>C++</span></li>
+                </ul>
             </div>
-            <div class="skill-category">
-                <h3><i class="fas fa-database"></i> Databases & Messaging</h3>
-                <div class="skill-badges">
-                    <span class="skill-badge"><i class="devicon-mongodb-plain colored"
-                            aria-hidden="true"></i><span>MongoDB</span></span>
-                    <span class="skill-badge"><i class="devicon-postgresql-plain colored"
-                            aria-hidden="true"></i><span>Postgres</span></span>
-                    <span class="skill-badge"><i class="devicon-mysql-plain colored"
-                            aria-hidden="true"></i><span>MySQL</span></span>
-                    <span class="skill-badge"><img class="skill-badge__icon" src="images/icon-masstransit.svg"
-                            alt="MassTransit logo"><span>MassTransit</span></span>
-                    <span class="skill-badge"><img class="skill-badge__icon" src="images/icon-signalr.svg"
-                            alt="SignalR logo"><span>SignalR</span></span>
-                    <span class="skill-badge"><img class="skill-badge__icon" src="images/icon-rabbitmq.svg"
-                            alt="RabbitMQ logo"><span>RabbitMQ</span></span>
-                    <span class="skill-badge"><img class="skill-badge__icon" src="images/icon-azure-service-bus.svg"
-                            alt="Azure Service Bus logo"><span>Azure Service Bus</span></span>
-                </div>
+            <div class="skill-group">
+                <h3 class="skill-group__title"><span>Cloud &amp; Platform</span></h3>
+                <ul class="skill-list">
+                    <li class="skill-item"><img src="images/icon-azure.svg" alt="" aria-hidden="true"><span>Azure</span></li>
+                    <li class="skill-item"><img src="images/icon-aks.svg" alt="" aria-hidden="true"><span><abbr title="Azure Kubernetes Service">AKS</abbr></span></li>
+                    <li class="skill-item"><i class="devicon-docker-plain colored" aria-hidden="true"></i><span>Docker</span></li>
+                    <li class="skill-item"><img src="images/icon-helm.svg" alt="" aria-hidden="true"><span>Helm</span></li>
+                    <li class="skill-item"><img src="images/icon-github-actions.svg" alt="" aria-hidden="true"><span>GitHub Actions</span></li>
+                    <li class="skill-item"><img src="images/icon-key-vault.svg" alt="" aria-hidden="true"><span>Key Vault</span></li>
+                </ul>
             </div>
-            <div class="skill-category">
-                <h3><i class="fas fa-cloud"></i> Cloud Platforms</h3>
-                <div class="skill-badges">
-                    <span class="skill-badge"><img class="skill-badge__icon" src="images/icon-azure.svg"
-                            alt="Azure logo"><span>Azure</span></span>
-                    <span class="skill-badge"><img class="skill-badge__icon" src="images/icon-aks.svg"
-                            alt="Azure Kubernetes Service logo"><span>AKS</span></span>
-                    <span class="skill-badge"><img class="skill-badge__icon" src="images/icon-acr.svg"
-                            alt="Azure Container Registry logo"><span>Azure Container Registry</span></span>
-                    <span class="skill-badge"><img class="skill-badge__icon" src="images/icon-key-vault.svg"
-                            alt="Azure Key Vault logo"><span>Key Vault</span></span>
-                    <span class="skill-badge"><img class="skill-badge__icon" src="images/icon-cosmosdb.svg"
-                            alt="Azure Cosmos DB logo"><span>Cosmos DB</span></span>
-                </div>
+            <div class="skill-group">
+                <h3 class="skill-group__title"><span>Data &amp; Messaging</span></h3>
+                <ul class="skill-list">
+                    <li class="skill-item"><i class="devicon-postgresql-plain colored" aria-hidden="true"></i><span>PostgreSQL</span></li>
+                    <li class="skill-item"><i class="devicon-mongodb-plain colored" aria-hidden="true"></i><span>MongoDB</span></li>
+                    <li class="skill-item"><img src="images/icon-rabbitmq.svg" alt="" aria-hidden="true"><span>RabbitMQ</span></li>
+                    <li class="skill-item"><img src="images/icon-masstransit.svg" alt="" aria-hidden="true"><span>MassTransit</span></li>
+                    <li class="skill-item"><img src="images/icon-signalr.svg" alt="" aria-hidden="true"><span>SignalR</span></li>
+                </ul>
             </div>
-            <div class="skill-category">
-                <h3><i class="fas fa-server"></i> DevOps & Automation</h3>
-                <div class="skill-badges">
-                    <span class="skill-badge"><i class="devicon-docker-plain colored"
-                            aria-hidden="true"></i><span>Docker</span></span>
-                    <span class="skill-badge"><i class="devicon-kubernetes-plain colored"
-                            aria-hidden="true"></i><span>Kubernetes</span></span>
-                    <span class="skill-badge"><img class="skill-badge__icon" src="images/icon-helm.svg"
-                            alt="Helm logo"><span>Helm</span></span>
-                    <span class="skill-badge"><img class="skill-badge__icon" src="images/icon-docker-compose.svg"
-                            alt="Docker Compose logo"><span>Docker Compose</span></span>
-                    <span class="skill-badge"><img class="skill-badge__icon" src="images/icon-github-actions.svg"
-                            alt="GitHub Actions logo"><span>GitHub Actions</span></span>
-                </div>
+            <div class="skill-group">
+                <h3 class="skill-group__title"><span>Observability</span></h3>
+                <ul class="skill-list">
+                    <li class="skill-item"><img src="images/icon-opentelemetry.svg" alt="" aria-hidden="true"><span>OpenTelemetry</span></li>
+                    <li class="skill-item"><img src="images/icon-prometheus.svg" alt="" aria-hidden="true"><span>Prometheus</span></li>
+                    <li class="skill-item"><i class="devicon-grafana-plain colored" aria-hidden="true"></i><span>Grafana</span></li>
+                    <li class="skill-item"><img src="images/icon-jaeger.svg" alt="" aria-hidden="true"><span>Jaeger</span></li>
+                </ul>
             </div>
-            <div class="skill-category">
-                <h3><i class="fas fa-chart-line"></i> Monitoring & Observability</h3>
-                <div class="skill-badges">
-                    <span class="skill-badge"><img class="skill-badge__icon" src="images/icon-opentelemetry.svg"
-                            alt="OpenTelemetry logo"><span>OpenTelemetry</span></span>
-                    <span class="skill-badge"><img class="skill-badge__icon" src="images/icon-prometheus.svg"
-                            alt="Prometheus logo"><span>Prometheus</span></span>
-                    <span class="skill-badge"><i class="devicon-grafana-plain colored"
-                            aria-hidden="true"></i><span>Grafana</span></span>
-                    <span class="skill-badge"><img class="skill-badge__icon" src="images/icon-seq.svg"
-                            alt="Seq logo"><span>Seq</span></span>
-                    <span class="skill-badge"><img class="skill-badge__icon" src="images/icon-jaeger.svg"
-                            alt="Jaeger logo"><span>Jaeger</span></span>
-                </div>
-            </div>
-            <div class="skill-category">
-                <h3><i class="fas fa-sitemap"></i> Practices & Architecture</h3>
-                <div class="skill-badges">
-                    <span class="skill-badge"><i class="devicon-git-plain colored"
-                            aria-hidden="true"></i><span>Git</span></span>
-                    <span class="skill-badge"><i class="fas fa-link" aria-hidden="true"></i><span>REST
-                            APIs</span></span>
-                    <span class="skill-badge"><i class="fas fa-sync-alt"
-                            aria-hidden="true"></i><span>CI/CD</span></span>
-                    <span class="skill-badge"><i class="fas fa-vial" aria-hidden="true"></i><span>Unit
-                            Testing</span></span>
-                    <span class="skill-badge"><i class="fas fa-project-diagram"
-                            aria-hidden="true"></i><span>SDLC</span></span>
-                    <span class="skill-badge"><i class="fas fa-cubes" aria-hidden="true"></i><span>DDD</span></span>
-                    <span class="skill-badge"><i class="fas fa-share-alt"
-                            aria-hidden="true"></i><span>Event-Driven</span></span>
-                    
-                </div>
+            <div class="skill-group skill-group--concepts">
+                <h3 class="skill-group__title"><span>Architecture &amp; Engineering</span></h3>
+                <ul class="skill-list">
+                    <li class="skill-item"><span>Microservices</span></li>
+                    <li class="skill-item"><span>Saga Pattern</span></li>
+                    <li class="skill-item"><span>Event-Driven Architecture</span></li>
+                    <li class="skill-item"><span>Unit Testing</span></li>
+                </ul>
             </div>
         </div>
     </section>
 
-    <div class="section-divider"></div>
 
-    <section id="projects" class="fade-in">
-        <h2 class="section-title">Projects</h2>
-        <div class="projects-grid">
-            <div class="project-card">
-                <div class="project-card__header">
-                    <div class="project-card__heading">
-                        <div class="project-card__title-row">
-                            <h3 class="project-card__title">
-                                <a href="https://gameplayeconomy.com" target="_blank" rel="noopener noreferrer"
-                                    class="project-card__title-link">GamePlayEconomy</a>
-                            </h3>
-                            <div class="project-links project-links--inline">
-                                <a class="project-link" href="https://gameplayeconomy.com" target="_blank"
-                                    rel="noopener noreferrer">
-                                    <i class="fa-solid fa-globe"></i>
-                                    <span>Website</span>
-                                </a>
-                                <a class="project-link" href="https://github.com/dotnetmicroservice001" target="_blank"
-                                    rel="noopener noreferrer">
-                                    <i class="fa-brands fa-github"></i>
-                                    <span>GitHub</span>
-                                </a>
-                            </div>
-                        </div>
-                        <p class="project-card__subtitle">Cloud native game economy platform that simulates virtual
-                            trading systems.</p>
-                    </div>
-                </div>
-                <div class="project-card__content">
-                    <div class="project-card__tags">
-                        <span class="project-tag">Event-Driven Microservices</span>
-                        <span class="project-tag">Distributed Systems</span>
+    <section id="about" class="profile fade-in">
+        <h2 class="section-title">About</h2>
 
-                        <span class="project-tag">.NET</span>
-                        <span class="project-tag">React</span>
-                        <span class="project-tag">RabbitMQ</span>
-                        <span class="project-tag">Azure Service Bus</span>
-                        <span class="project-tag">MongoDB</span>
-                        <span class="project-tag">MassTransit</span>
-                        <span class="project-tag">SignalR</span>
-                        <span class="project-tag">IdentityServer</span>
-                        <span class="project-tag">AKS</span>
-                        <span class="project-tag">Helm</span>
-                        <span class="project-tag">Seq</span>
-                        <span class="project-tag">Jaeger</span>
-                        <span class="project-tag">Prometheus</span>
-                    </div>
-                    <ul class="project-highlights">
-                        <li>Event-driven microservices with MassTransit and Saga pattern for distributed consistency.
-                        </li>
-                        <li>OAuth 2.0 / JWT auth via IdentityServer.</li>
-                        <li>Resilience patterns (Polly, circuit breakers, idempotent tracking).</li>
-                        <li>React SPA + SignalR for real-time user interactions.</li>
-                        <li>Automated CI/CD with Helm-based AKS deployments + TLS secured API Gateway.</li>
-                        <li>Full Open Telemetry observability stack (Seq, Jaeger, Prometheus).</li>
-                    </ul>
-                </div>
+        <div class="profile__grid">
+            <div class="profile__story">
+                <p>
+                    I work across the stack, and I like the iterative process of building something
+                    and breaking it.
+                </p>
+                <p>
+                    Most recently I was a Cloud Software Engineer Intern at Promega, building real-time
+                    notification workflows for their cloud platform.
+                </p>
             </div>
 
-            <div class="project-card">
-                <div class="project-card__header">
-                    <div class="project-card__heading">
-                        <div class="project-card__title-row">
-                            <h3 class="project-card__title">
-                                <a href="https://spoontab.com" target="_blank" rel="noopener noreferrer"
-                                    class="project-card__title-link">SpoonTab</a>
-                            </h3>
-                            <div class="project-links project-links--inline">
-                                <a class="project-link" href="https://spoontab.com" target="_blank"
-                                    rel="noopener noreferrer">
-                                    <i class="fa-solid fa-globe"></i>
-                                    <span>Website</span>
-                                </a>
-                                <a class="project-link" href="https://github.com/basnets24/restaurant.pos"
-                                    target="_blank" rel="noopener noreferrer">
-                                    <i class="fa-brands fa-github"></i>
-                                    <span>GitHub</span>
-                                </a>
-                            </div>
-                        </div>
-                        <p class="project-card__subtitle">Modern restaurant POS platform designed for multi-tenant
-                            management and real time operations.</p>
-                    </div>
+            <aside class="profile__facts" aria-label="Profile details">
+                <div class="profile__fact">
+                    <h3 class="profile__label">Education</h3>
+                    <p class="profile__fact-primary">B.S. in Computer Science</p>
+                    <p>San Jose State University</p>
+                    <p class="profile__fact-muted">Dec 2026 <span class="profile__sep">&middot;</span> GPA 3.90</p>
                 </div>
-                <div class="project-card__content">
-                    <div class="project-card__tags">
-                        <span class="project-tag">Distributed Microservices</span>
-                        <span class="project-tag">Domain-Driven Design</span>
-                        <span class="project-tag">.NET</span>
-                        <span class="project-tag">React</span>
-                        <span class="project-tag">PostgreSQL</span>
-                        <span class="project-tag">MongoDB</span>
-                        <span class="project-tag">IdentityServer</span>
-                        <span class="project-tag">Stripe SDK</span>
-                        <span class="project-tag">Azure</span>
-                        <span class="project-tag">Docker</span>
-                        <span class="project-tag">API Gateway</span>
-                        <span class="project-tag">Kubernetes</span>
-                        <span class="project-tag">Helm</span>
-                        <span class="project-tag">GitHub Actions</span>
-                    </div>
-                    <ul class="project-highlights">
-                        <li>Distributed microservices for real time orders, payments, and staff management.</li>
-                        <li>Tenant-aware IAM service with JWT auth via IdentityServer.</li>
-                        <li>Stripe Checkout integration with webhook validation.</li>
-                        <li>React POS UI with table layouts & real time updates.</li>
-                        <li>Azure provisioning (AKS, ACR, Key Vault, Service Bus, Cosmos) via Helm.</li>
-                        <li>Versioned rollbacks for resilient deployments.</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="project-card">
-                <div class="project-card__header">
-                    <div class="project-card__heading">
-                        <div class="project-card__title-row">
-                            <h3 class="project-card__title">
-                                <a href="https://github.com/basnets24/CampusConnect" target="_blank"
-                                    rel="noopener noreferrer" class="project-card__title-link">CampusConnect</a>
-                            </h3>
-                            <div class="project-links project-links--inline">
-                                <a class="project-link" href="https://github.com/basnets24/CampusConnect"
-                                    target="_blank" rel="noopener noreferrer">
-                                    <i class="fa-brands fa-github"></i>
-                                    <span>GitHub</span>
-                                </a>
-                            </div>
-                        </div>
-                        <p class="project-card__subtitle">Desktop scheduling tool built with JavaFX to streamline
-                            faculty-student office hours.</p>
-                    </div>
-                    <!-- <span class="project-card__accent">Campus Collab</span> -->
-                </div>
-                <div class="project-card__content">
-                    <div class="project-card__tags">
-                        <span class="project-tag">Java</span>
-                        <span class="project-tag">JavaFX</span>
-                        <span class="project-tag">MySQL</span>
-                        <span class="project-tag">JUnit</span>
-                        <span class="project-tag">Agile/Scrum</span>
-
-                    </div>
-                    <ul class="project-highlights">
-                        <li>Team project to schedule professor office hours.</li>
-                        <li>JavaFX UI with CRUD operations and validation for non-overlapping bookings.</li>
-                        <li>MVC architecture + unit testing + GitHub collaboration workflow.</li>
-                    </ul>
-                </div>
-            </div>
-
+            </aside>
         </div>
-    </section>
 
-    <div class="section-divider"></div>
-
-    <section id="contact" class="fade-in">
-        <div class="card contact-card">
-            <h2 class="section-title">Contact</h2>
-
-            <div class="contact-wrapper">
-                <div class="contact-info">
-                    <p><i class="fas fa-map-marker-alt"></i>San Jose, CA</p>
-                    <p>Actively seeking Summer 2026 software engineering internships.</p>
-                    <p>Open to opportunities, collaborations, and learning!</p>
-                </div>
-
-                <div class="contact-links-container">
-                    <a href="mailto:snehabasnet224@gmail.com" class="contact-link">
-                        <i class="fas fa-envelope"></i> Email
-                    </a>
-                    <a href="https://linkedin.com/in/snehabasnet" target="_blank" class="contact-link">
-                        <i class="fab fa-linkedin"></i> LinkedIn
-                    </a>
-                    <a href="https://github.com/basnets24" target="_blank" class="contact-link">
-                        <i class="fab fa-github"></i> GitHub
-                    </a>
-                    <a href="Sneha_Basnet_SDE_Intern_Resume.pdf" target="_blank" class="contact-link">
-                        <i class="fas fa-file-pdf"></i> Resume
-                    </a>
-                </div>
+        <div class="profile__contact" id="contact">
+            <div class="profile__contact-text">
+                <h3 class="profile__label">Contact</h3>
+                <p class="profile__lead">Open to full-time Software Engineering roles starting early 2027.</p>
+            </div>
+            <div class="project-links profile__links">
+                <a class="project-link project-link--primary" href="mailto:snehabasnet224@gmail.com">
+                    <i class="fa-solid fa-envelope"></i>
+                    <span>Email</span>
+                </a>
+                <a class="project-link" href="https://linkedin.com/in/snehabasnet" target="_blank"
+                    rel="noopener noreferrer">
+                    <i class="fa-brands fa-linkedin"></i>
+                    <span>LinkedIn</span>
+                </a>
+                <a class="project-link" href="https://github.com/basnets24" target="_blank"
+                    rel="noopener noreferrer">
+                    <i class="fa-brands fa-github"></i>
+                    <span>GitHub</span>
+                </a>
+                <a class="project-link" href="Sneha_Basnet_SDE_Intern_Resume.pdf" target="_blank">
+                    <i class="fa-solid fa-file-pdf"></i>
+                    <span>Resume</span>
+                </a>
             </div>
         </div>
     </section>
 
-    <footer>© 2025 Sneha Basnet · Built with 💙 using HTML, CSS, and JavaScript.</footer>
+    <footer>© 2026 Sneha Basnet</footer>
 
     <script defer src="script.js"></script>
 
