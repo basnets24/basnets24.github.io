@@ -1,83 +1,10 @@
-const themeStorageKey = 'sb-theme';
-const themeToggle = document.getElementById('theme-toggle');
-const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
 const mainNav = document.getElementById('main-nav');
 
-const themeStorage = (() =>
-{
-    try
-    {
-        const testKey = '__theme-check';
-        localStorage.setItem(testKey, testKey);
-        localStorage.removeItem(testKey);
-        return localStorage;
-    }
-    catch (error)
-    {
-        return null;
-    }
-})();
-
-const getStoredTheme = () => themeStorage ? themeStorage.getItem(themeStorageKey) : null;
-const setStoredTheme = value =>
-{
-    if (!themeStorage) return;
-    if (value) themeStorage.setItem(themeStorageKey, value);
-    else themeStorage.removeItem(themeStorageKey);
-};
-
-const applyTheme = theme =>
-{
-    const desired = theme === 'light' ? 'light' : 'dark';
-    document.body.dataset.theme = desired;
-    if (themeToggle)
-    {
-        themeToggle.setAttribute('aria-label', desired === 'light' ? 'Switch to dark theme' : 'Switch to light theme');
-        themeToggle.innerHTML = desired === 'light'
-            ? '<i class="fas fa-moon"></i>'
-            : '<i class="fas fa-sun"></i>';
-    }
-};
-
-const storedTheme = getStoredTheme();
-if (storedTheme)
-{
-    applyTheme(storedTheme);
-}
-else
-{
-    applyTheme('dark');
-}
-
-if (themeToggle)
-{
-    themeToggle.addEventListener('click', () =>
-    {
-        const nextTheme = document.body.dataset.theme === 'light' ? 'dark' : 'light';
-        setStoredTheme(nextTheme);
-        applyTheme(nextTheme);
-    });
-}
-
-const handleSystemThemeChange = event =>
-{
-    if (!getStoredTheme())
-    {
-        applyTheme(event.matches ? 'dark' : 'light');
-    }
-};
-
-if (typeof prefersDark.addEventListener === 'function')
-{
-    prefersDark.addEventListener('change', handleSystemThemeChange);
-}
-else if (typeof prefersDark.addListener === 'function')
-{
-    prefersDark.addListener(handleSystemThemeChange);
-}
-
 const heroNameEl = document.querySelector('[data-typed-text]');
-if (heroNameEl)
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+// The name types itself in, but only once the headline has settled so the
+// motion never wins the first fixation. Reduced motion: render instantly.
+if (heroNameEl && !prefersReducedMotion)
 {
     const fullText = (heroNameEl.getAttribute('data-typed-text') || heroNameEl.textContent || '').trim();
     heroNameEl.setAttribute('aria-label', fullText);
@@ -104,7 +31,7 @@ if (heroNameEl)
         }
     };
 
-    setTimeout(typeNextCharacter, 450);
+    setTimeout(typeNextCharacter, 900);
 }
 
 // Fade-in animation observer
@@ -121,6 +48,42 @@ const appearOnScroll = new IntersectionObserver((entries, observer) =>
 }, appearOptions);
 faders.forEach(fader => appearOnScroll.observe(fader));
 
+// A direct anchor-link load (e.g. arriving at #about) jumps the viewport
+// straight to the target, so a section in between can go from "below the
+// viewport" to "above it" without ever crossing the observer's threshold —
+// leaving it stuck at opacity 0 forever. The browser can also apply that
+// jump after this script runs, once images finish loading and shift the
+// layout, so a one-time check isn't enough: re-check on load and on every
+// scroll until nothing is left to reveal.
+const revealPassedFaders = () =>
+{
+    faders.forEach(fader =>
+    {
+        if (fader.classList.contains('visible')) return;
+        if (fader.getBoundingClientRect().top < window.innerHeight)
+        {
+            fader.classList.add('visible');
+            appearOnScroll.unobserve(fader);
+        }
+    });
+};
+revealPassedFaders();
+window.addEventListener('scroll', revealPassedFaders);
+
+// Fonts and images can still reflow the layout after the jump lands,
+// shifting a section past the check above before the browser paints it —
+// poll for a moment after load to catch that settling.
+window.addEventListener('load', () =>
+{
+    const deadline = Date.now() + 1500;
+    const poll = () =>
+    {
+        revealPassedFaders();
+        if (Date.now() < deadline) requestAnimationFrame(poll);
+    };
+    requestAnimationFrame(poll);
+});
+
 // Create progress bar element
 const progressBar = document.createElement('div');
 progressBar.className = 'scroll-progress';
@@ -132,19 +95,14 @@ window.addEventListener('scroll', function ()
     const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
     const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
 
-    // Add scrolled class to nav when page is scrolled
+    // The nav is position: sticky at the top of the page; once the page has
+    // scrolled past it, let it go slightly translucent with a blur.
     if (mainNav)
     {
-        if (scrollTop > 50)
-        {
-            mainNav.classList.add('scrolled');
-        } else
-        {
-            mainNav.classList.remove('scrolled');
-        }
+        mainNav.classList.toggle('scrolled', scrollTop > 8);
     }
-    const scrolled = (scrollTop / scrollHeight) * 100;
-    progressBar.style.width = scrolled + '%';
+    const scrolled = scrollHeight > 0 ? scrollTop / scrollHeight : 0;
+    progressBar.style.transform = `scaleX(${scrolled})`;
 });
 
 // Mobile menu toggle
@@ -171,26 +129,42 @@ navLinkAnchors.forEach(link =>
 
         if (navLinks && navLinks.classList.contains('show'))
         {
-            navLinks.classList.remove('show');
-            if (mobileMenuToggle)
-            {
-                mobileMenuToggle.innerHTML = '<i class="fas fa-bars"></i>';
-            }
+            setMenuOpen(false);
         }
     });
 });
+
+function setMenuOpen(open)
+{
+    if (!navLinks || !mobileMenuToggle) return;
+    navLinks.classList.toggle('show', open);
+    mobileMenuToggle.setAttribute('aria-expanded', String(open));
+    // Swap the icon in place (rather than replacing the markup) so the
+    // clicked element stays in the DOM for the outside-click check below.
+    const icon = mobileMenuToggle.querySelector('i');
+    if (icon)
+    {
+        icon.classList.toggle('fa-bars', !open);
+        icon.classList.toggle('fa-times', open);
+    }
+}
 
 if (mobileMenuToggle && navLinks)
 {
     mobileMenuToggle.addEventListener('click', () =>
     {
-        navLinks.classList.toggle('show');
-        mobileMenuToggle.innerHTML = navLinks.classList.contains('show')
-            ? '<i class="fas fa-times"></i>'
-            : '<i class="fas fa-bars"></i>';
+        setMenuOpen(!navLinks.classList.contains('show'));
     });
 
-    // Close menu when clicking a link
+    // Close the menu on Escape or when clicking outside the header
+    document.addEventListener('keydown', event =>
+    {
+        if (event.key === 'Escape') setMenuOpen(false);
+    });
+    document.addEventListener('click', event =>
+    {
+        if (mainNav && !mainNav.contains(event.target)) setMenuOpen(false);
+    });
 }
 
 // Add active class to current section in navigation
@@ -217,3 +191,4 @@ window.addEventListener('scroll', () =>
         }
     });
 });
+
